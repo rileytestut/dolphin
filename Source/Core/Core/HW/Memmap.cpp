@@ -304,6 +304,9 @@ void Init()
     }
   }
 
+  // TODO: Move this to the Jit
+  InitFastmemArena();
+
   if (wii)
     mmio_mapping = InitMMIOWii();
   else
