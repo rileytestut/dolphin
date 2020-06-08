@@ -73,3 +73,12 @@ std::optional<std::wstring> GetModuleName(void* hInstance)
   return name;
 }
 #endif
+
+std::string GetBuildType()
+{
+#ifdef _DEBUG
+  return "Debug";
+#else
+  return "Release";
+#endif
+}
