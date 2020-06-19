@@ -34,10 +34,19 @@ jobs:
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
       
     - name: Build test
+      env:
+        CODE_SIGNING_ALLOWED: "NO"
+        CODE_SIGNING_REQUIRED: "NO"
+        CODE_SIGN_ENTITLEMENTS: ""
+        CODE_SIGN_IDENTITY: ""
+        BUILD_DIR: "${{ github.workspace }}/build-Xcode"
       run: |
-        cd Source/iOS/DolphiniOS
         mkdir build-Xcode
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS" BUILD_DIR="$(pwd)/build-Xcode" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
+        cd Source/iOS/DolphiniOS
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS"
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon)" -scheme "DolphiniOS"
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS"
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" 
     
     - name: tmate
       uses: mxschmitt/action-tmate@v2
