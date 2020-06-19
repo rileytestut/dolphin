@@ -27,11 +27,15 @@ jobs:
       run: |
         cd Source/iOS/DolphiniOS
         pod install
+        
+    - name: Decrypt Firebase Property List
+      run: |
+        cd Source/iOS/DolphiniOS/DolphiniOS
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist.gpg GoogleService-Info.plist
       
     - name: Build test
       run: |
         cd Source/iOS/DolphiniOS
-        xcodebuild -workspace DolphiniOS.xcworkspace -list
         xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGN_ENTITLEMENTS="" CODE_SIGNING_ALLOWED="NO"
     
     - name: tmate
