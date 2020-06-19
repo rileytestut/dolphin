@@ -31,7 +31,7 @@ jobs:
     - name: Decrypt Firebase Property List
       run: |
         cd Source/iOS/DolphiniOS/DolphiniOS
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist.gpg GoogleService-Info.plist
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
       
     - name: Build test
       run: |
