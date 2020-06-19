@@ -20,6 +20,7 @@ jobs:
     
     - name: Install build utilities
       run: brew install ninja bartycrouch
+           pip3 install polib
     
     - name: Run CocoaPods
       run: |
