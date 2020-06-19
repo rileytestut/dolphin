@@ -19,8 +19,9 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install build utilities
-      run: brew install ninja bartycrouch
-           pip3 install polib
+      run: |
+        brew install ninja bartycrouch
+        pip3 install polib
     
     - name: Run CocoaPods
       run: |
