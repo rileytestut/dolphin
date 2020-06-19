@@ -19,3 +19,5 @@ jobs:
           echo "sha ${{ github.sha }}"
           ./Tools/lint.sh $(git rev-parse origin/${{ github.base_ref }})...
       
+      - name: tmate
+        uses: mxschmitt/action-tmate@v2
