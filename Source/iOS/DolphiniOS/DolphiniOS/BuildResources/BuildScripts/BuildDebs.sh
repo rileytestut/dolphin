@@ -9,8 +9,13 @@ DOLPHIN_EXPORT_PATH="$EXPORT_PATH/dolphin_deb_root/"
 CSDBGD_EXPORT_PATH="$EXPORT_PATH/csdbgd_deb_root/"
 CONTROL_FILE=$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control.in
 APPLICATION_DESTINATION_PATH=$DOLPHIN_EXPORT_PATH/Applications/DolphiniOS.app
+CODESIGN_ARGS="-f -s \"OatmealDome Software\""
 BUNDLE_ID="me.oatmealdome.DolphiniOS"
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
+
+if [ -z "$1" ]; then
+  CODESIGN_ARGS+="--keychain $1"
+fi
 
 if [ $BUILD_FOR_PATREON == "YES" ]; then
   CONTROL_FILE=$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control-patreon.in
@@ -53,9 +58,9 @@ sed "s/VERSION_NUMBER/$MARKETING_VERSION-$BUILD_NUMBER/g" $ROOT_SRC_DIR/csdbgd/D
 plutil -replace "CFBundleIdentifier" -string "$BUNDLE_ID" $APPLICATION_DESTINATION_PATH/Info.plist
 
 # Resign the application
-codesign -f -s "OatmealDome Software" --entitlements $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_JB.plist $APPLICATION_DESTINATION_PATH
-codesign -f -s "OatmealDome Software" --entitlements $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_JB.plist $APPLICATION_DESTINATION_PATH/Frameworks/*
-codesign -f -s "OatmealDome Software" --entitlements $ROOT_SRC_DIR/csdbgd/Entitlements.plist $CSDBGD_EXPORT_PATH/usr/libexec/csdbgd
+codesign $CODESIGN_ARGS --entitlements $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_JB.plist $APPLICATION_DESTINATION_PATH
+codesign $CODESIGN_ARGS --entitlements $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/Entitlements_JB.plist $APPLICATION_DESTINATION_PATH/Frameworks/*
+codesign $CODESIGN_ARGS --entitlements $ROOT_SRC_DIR/csdbgd/Entitlements.plist $CSDBGD_EXPORT_PATH/usr/libexec/csdbgd
 
 # Remove the mobileprovision file
 rm $APPLICATION_DESTINATION_PATH/embedded.mobileprovision
