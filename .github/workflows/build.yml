@@ -20,7 +20,7 @@ jobs:
     
     - name: Install build utilities
       run: |
-        brew install ninja bartycrouch
+        brew install ninja bartycrouch s3cmd
         pip3 install polib
     
     - name: Cache Pods dependencies
@@ -41,16 +41,25 @@ jobs:
         cd Source/iOS/DolphiniOS/DolphiniOS
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
       
-    - name: Build test
+    - name: Build
       env:
-        XCODEBUILD_ARGS: "CODE_SIGNING_ALLOWED=\"NO\" CODE_SIGNING_REQUIRED=\"NO\" CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGN_IDENTITY=\"\"" 
+        XCODEBUILD_ARGS: "BUILD_DIR=${{ github.workspace }}/build-Xcode CODE_SIGNING_ALLOWED=\"NO\" CODE_SIGNING_REQUIRED=\"NO\" CODE_SIGN_ENTITLEMENTS=\"\" CODE_SIGN_IDENTITY=\"\"" 
       run: |
         mkdir build-Xcode
         cd Source/iOS/DolphiniOS
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS" BUILD_DIR=${{ github.workspace }}/build-Xcode ${{ env.XCODEBUILD_ARGS }}
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon)" -scheme "DolphiniOS" BUILD_DIR=${{ github.workspace }}/build-Xcode ${{ env.XCODEBUILD_ARGS }}
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" BUILD_DIR=${{ github.workspace }}/build-Xcode ${{ env.XCODEBUILD_ARGS }}
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" BUILD_DIR=${{ github.workspace }}/build-Xcode ${{ env.XCODEBUILD_ARGS }}
-    
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
+        #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
+        #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
+        #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" {{ env.XCODEBUILD_ARGS }}
+        
+    - name: Package
+      env:
+        PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
+        ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root"
+      run: |
+        mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
+        cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)/Products/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
+        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh
+        
     - name: tmate
       uses: mxschmitt/action-tmate@v2
