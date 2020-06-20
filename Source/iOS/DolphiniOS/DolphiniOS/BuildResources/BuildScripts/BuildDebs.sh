@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -x
 
 ROOT_SRC_DIR=$PROJECT_DIR/../
 EXPORT_UUID=`uuidgen`
