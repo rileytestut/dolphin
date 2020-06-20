@@ -25,10 +25,15 @@ jobs:
         
     - name: Create Keychain
       run: |
+        echo create
         security create-keychain -p alpine build.keychain
+        echo default
         security default-keychain -s build.keychain
+        echo unlock
         security unlock-keychain -p alpine build.keychain
+        echo skpl
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
+        echo import
         security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }}
         
     - name: Decrypt Firebase Property List
