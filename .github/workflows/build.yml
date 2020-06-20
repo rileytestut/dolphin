@@ -28,6 +28,7 @@ jobs:
         security create-keychain -p alpine build.keychain
         security default-keychain -s build.keychain
         security unlock-keychain -p alpine build.keychain
+        security set-keychain-settings -t 36000 build.keychain
         security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
         
