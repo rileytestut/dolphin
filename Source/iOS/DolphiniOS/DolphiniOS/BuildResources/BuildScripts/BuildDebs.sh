@@ -14,8 +14,10 @@ BUNDLE_ID="me.oatmealdome.DolphiniOS"
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
 
 if [ -z "$1" ]; then
-  CODESIGN_ARGS+="--keychain $1"
+  CODESIGN_ARGS+=" --keychain $1"
 fi
+
+echo $CODESIGN_ARGS
 
 if [ $BUILD_FOR_PATREON == "YES" ]; then
   CONTROL_FILE=$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control-patreon.in
