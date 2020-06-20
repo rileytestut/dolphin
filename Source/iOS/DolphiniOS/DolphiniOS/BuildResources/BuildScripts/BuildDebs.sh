@@ -14,7 +14,7 @@ CODESIGN_ARGS='-f -s OatmealDome'
 BUNDLE_ID="me.oatmealdome.DolphiniOS"
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
 
-if [ -n "$1" ]; then
+if [ -n "$IS_CI" ]; then
   CODESIGN_ARGS+=" --keychain $1"
 fi
 
@@ -66,7 +66,7 @@ codesign $CODESIGN_ARGS --entitlements $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/Build
 codesign $CODESIGN_ARGS --entitlements $ROOT_SRC_DIR/csdbgd/Entitlements.plist $CSDBGD_EXPORT_PATH/usr/libexec/csdbgd
 
 # Remove the mobileprovision file
-rm $APPLICATION_DESTINATION_PATH/embedded.mobileprovision
+rm $APPLICATION_DESTINATION_PATH/embedded.mobileprovision || true
 
 # Create the deb file
 dpkg-deb -b $DOLPHIN_EXPORT_PATH
@@ -75,4 +75,8 @@ mv $EXPORT_PATH/dolphin_deb_root.deb $EXPORT_PATH/DolphiniOS.deb
 dpkg-deb -b $CSDBGD_EXPORT_PATH
 mv $EXPORT_PATH/csdbgd_deb_root.deb $EXPORT_PATH/csdbgd.deb
 
-open $EXPORT_PATH
+if [ -n "$IS_CI" ]; then
+  echo $EXPORT_PATH
+else
+  open $EXPORT_PATH
+fi
