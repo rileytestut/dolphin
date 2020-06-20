@@ -22,24 +22,30 @@ jobs:
       run: |
         brew install ninja bartycrouch s3cmd
         pip3 install polib
+        
+    - name: Create Keychain
+      run: |
+        security create-keychain -p alpine build.keychain
+        security default-keychain -s build.keychain
+        security unlock-keychain -p alpine build.keychain
+        security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
+        security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }}
+        
+    - name: Decrypt Firebase Property List
+      run: |
+        cd Source/iOS/DolphiniOS/DolphiniOS
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
     
     - name: Cache Pods dependencies
       uses: actions/cache@v1
       with:
         path: Source/iOS/DolphiniOS/Pods
         key: ${{ runner.OS }}-pods-cache-${{ hashFiles('**/Source/iOS/DolphiniOS/Podfile.lock') }}
-        restore-keys: |
-          ${{ runner.OS }}-pods-cache-
     
     - name: Run CocoaPods
       run: |
         cd Source/iOS/DolphiniOS
         pod install
-        
-    - name: Decrypt Firebase Property List
-      run: |
-        cd Source/iOS/DolphiniOS/DolphiniOS
-        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
       
     - name: Build
       env:
@@ -56,8 +62,8 @@ jobs:
       env:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
         ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root"
+        BUILD_FOR_PATREON: "NO"
       run: |
-        security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }}
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
         Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh
