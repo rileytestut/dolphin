@@ -11,6 +11,7 @@ CONTROL_FILE=$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control
 APPLICATION_DESTINATION_PATH=$DOLPHIN_EXPORT_PATH/Applications/DolphiniOS.app
 CODESIGN_ARGS='-f -s OatmealDome'
 BUNDLE_ID="me.oatmealdome.DolphiniOS"
+VERSION_STRING=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$PROJECT_DIR/DolphiniOS/Info.plist")
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
 
 if [ -n "$IS_CI" ]; then
@@ -46,7 +47,7 @@ cp -r "$ARCHIVE_PATH/Products/Applications/DolphiniOS.app" $APPLICATION_DESTINAT
 cp $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/postinst.sh $DOLPHIN_EXPORT_PATH/DEBIAN/postinst
 cp $ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/postrm.sh $DOLPHIN_EXPORT_PATH/DEBIAN/postrm
 chmod -R 755 $DOLPHIN_EXPORT_PATH/DEBIAN/*
-sed "s/VERSION_NUMBER/$MARKETING_VERSION-$BUILD_NUMBER/g" $CONTROL_FILE > $DOLPHIN_EXPORT_PATH/DEBIAN/control
+sed "s/VERSION_NUMBER/$VERSION_STRING-$BUILD_NUMBER/g" $CONTROL_FILE > $DOLPHIN_EXPORT_PATH/DEBIAN/control
 
 cp $ROOT_SRC_DIR/csdbgd/csdbgd $CSDBGD_EXPORT_PATH/usr/libexec
 cp $ROOT_SRC_DIR/csdbgd/me.oatmealdome.csdbgd.plist $CSDBGD_EXPORT_PATH/Library/LaunchDaemons
@@ -54,7 +55,7 @@ cp $ROOT_SRC_DIR/csdbgd/DebFiles/preinst.sh $CSDBGD_EXPORT_PATH/DEBIAN/preinst
 cp $ROOT_SRC_DIR/csdbgd/DebFiles/postinst.sh $CSDBGD_EXPORT_PATH/DEBIAN/postinst
 cp $ROOT_SRC_DIR/csdbgd/DebFiles/prerm.sh $CSDBGD_EXPORT_PATH/DEBIAN/prerm
 chmod -R 755 $CSDBGD_EXPORT_PATH/DEBIAN/*
-sed "s/VERSION_NUMBER/$MARKETING_VERSION-$BUILD_NUMBER/g" $ROOT_SRC_DIR/csdbgd/DebFiles/control > $CSDBGD_EXPORT_PATH/DEBIAN/control
+sed "s/VERSION_NUMBER/$VERSION_STRING-$BUILD_NUMBER/g" $ROOT_SRC_DIR/csdbgd/DebFiles/control > $CSDBGD_EXPORT_PATH/DEBIAN/control
 
 # Hack bundle ID
 plutil -replace "CFBundleIdentifier" -string "$BUNDLE_ID" $APPLICATION_DESTINATION_PATH/Info.plist
