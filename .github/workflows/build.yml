@@ -36,7 +36,7 @@ jobs:
         cd Source/iOS/DolphiniOS/DolphiniOS
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
     
-    - name: Cache Pods dependencies
+    - name: Cache CocoaPods
       uses: actions/cache@v1
       with:
         path: Source/iOS/DolphiniOS/Pods
