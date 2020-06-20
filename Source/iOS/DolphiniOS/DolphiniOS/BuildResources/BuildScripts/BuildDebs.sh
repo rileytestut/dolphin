@@ -11,7 +11,7 @@ CONTROL_FILE=$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control
 APPLICATION_DESTINATION_PATH=$DOLPHIN_EXPORT_PATH/Applications/DolphiniOS.app
 CODESIGN_ARGS='-f -s OatmealDome'
 BUNDLE_ID="me.oatmealdome.DolphiniOS"
-VERSION_STRING=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "$PROJECT_DIR/DolphiniOS/Info.plist")
+VERSION_STRING=$(cat $PROJECT_DIR/DolphiniOS.xcodeproj/project.pbxproj | grep -m1 'MARKETING_VERSION' | cut -d'=' -f2 | tr -d ';' | tr -d ' ')
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
 
 if [ -n "$IS_CI" ]; then
