@@ -61,7 +61,6 @@ jobs:
         BUILD_FOR_PATREON: "NO"
         IS_CI: "YES"
       run: |
-        echo ::set-env name=MARKETING_VERSION::$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "${{ env.PROJECT_DIR }}/DolphiniOS/Info.plist")
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
         Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain JB_DEB_PATH
@@ -71,7 +70,7 @@ jobs:
         S3CMD_ARGS: "--access_key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }}"
         BUCKET_ROOT_PATH: "s3://wii-sports/dolphinios/ci/"
       run: |
-        s3cmd put ${{ env.JB_DEB_PATH }} ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
+        s3cmd put ${{ env.JB_DEB_PATH }}/DolphiniOS.deb ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
         
     - name: tmate
       uses: mxschmitt/action-tmate@v2
