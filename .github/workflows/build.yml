@@ -63,7 +63,7 @@ jobs:
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        echo ::set-env name=JB_DEB_PATH::$(Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain)
+        echo ::set-env name=JB_DEB_PATH::${{ env.DEB_PATH }}
         
     - name: Upload
       env:
