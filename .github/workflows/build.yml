@@ -28,7 +28,7 @@ jobs:
         security create-keychain -p alpine build.keychain
         security default-keychain -s build.keychain
         security unlock-keychain -p alpine build.keychain
-        security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }}
+        security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
         
     - name: Decrypt Firebase Property List
@@ -57,8 +57,7 @@ jobs:
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" {{ env.XCODEBUILD_ARGS }}
-    - name: tmate2
-      uses: mxschmitt/action-tmate@v2
+      
     - name: Package
       env:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
@@ -67,7 +66,7 @@ jobs:
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh ${{ github.workspace }}/build.keychain
+        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain
         
     - name: tmate
       uses: mxschmitt/action-tmate@v2
