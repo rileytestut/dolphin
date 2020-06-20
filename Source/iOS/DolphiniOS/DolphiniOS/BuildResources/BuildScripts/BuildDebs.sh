@@ -37,7 +37,7 @@ mkdir -p $CSDBGD_EXPORT_PATH/Library/LaunchDaemons
 mkdir -p $CSDBGD_EXPORT_PATH/usr/libexec
 mkdir $CSDBGD_EXPORT_PATH/DEBIAN
 
-exec > $EXPORT_PATH/archive.log 2>&1
+#exec > $EXPORT_PATH/archive.log 2>&1
 
 # Copy resources
 cp -r "$ARCHIVE_PATH/Products/Applications/DolphiniOS.app" $APPLICATION_DESTINATION_PATH
