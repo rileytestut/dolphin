@@ -13,7 +13,7 @@ CODESIGN_ARGS="-f -s \"OatmealDome Software\""
 BUNDLE_ID="me.oatmealdome.DolphiniOS"
 BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/DolphiniOS/Info.plist")
 
-if [ -z "$1" ]; then
+if [ -n "$1" ]; then
   CODESIGN_ARGS+=" --keychain $1"
 fi
 
