@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-set -x
 
 ROOT_SRC_DIR=$PROJECT_DIR/../
 EXPORT_UUID=`uuidgen`
@@ -17,8 +16,6 @@ BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$PROJECT_DIR/
 if [ -n "$IS_CI" ]; then
   CODESIGN_ARGS+=" --keychain $1"
 fi
-
-echo $CODESIGN_ARGS
 
 if [ $BUILD_FOR_PATREON == "YES" ]; then
   CONTROL_FILE=$ROOT_SRC_DIR/DolphiniOS/DolphiniOS/BuildResources/DebFiles/control-patreon.in
