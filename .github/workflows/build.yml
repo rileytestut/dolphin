@@ -57,7 +57,8 @@ jobs:
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" {{ env.XCODEBUILD_ARGS }}
-        
+    - name: tmate2
+      uses: mxschmitt/action-tmate@v2
     - name: Package
       env:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
