@@ -59,7 +59,7 @@ jobs:
       run: |
         security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }}
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/Products/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
+        cp -R "${{ github.workspace }}/build-Xcode/Products/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
         Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh
         
     - name: tmate
