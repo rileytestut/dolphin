@@ -37,7 +37,9 @@ mkdir -p $CSDBGD_EXPORT_PATH/Library/LaunchDaemons
 mkdir -p $CSDBGD_EXPORT_PATH/usr/libexec
 mkdir $CSDBGD_EXPORT_PATH/DEBIAN
 
-#exec > $EXPORT_PATH/archive.log 2>&1
+if [ -z "$IS_CI" ]; then
+  exec > $EXPORT_PATH/archive.log 2>&1
+fi
 
 # Copy resources
 cp -r "$ARCHIVE_PATH/Products/Applications/DolphiniOS.app" $APPLICATION_DESTINATION_PATH
@@ -73,7 +75,7 @@ dpkg-deb -b $CSDBGD_EXPORT_PATH
 mv $EXPORT_PATH/csdbgd_deb_root.deb $EXPORT_PATH/csdbgd.deb
 
 if [ -n "$IS_CI" ]; then
-  echo $EXPORT_PATH
+  echo ::set-env name=DEB_PATH::$EXPORT_PATH
 else
   open $EXPORT_PATH
 fi
