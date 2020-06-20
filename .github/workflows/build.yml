@@ -64,10 +64,18 @@ jobs:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
         ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root"
         BUILD_FOR_PATREON: "NO"
+        IS_CI: "YES"
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain
+        echo ::set-env name=JB_DEB_PATH::$(Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain)
+        
+    - name: Upload
+      env:
+        S3CMD_ARGS: "--access-key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }}"
+        BUCKET_ROOT_PATH: "s3://wii-sports/dolphinios/ci/"
+      run: |
+        s3cmd put ${{ env.JB_DEB_PATH }} ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
         
     - name: tmate
       uses: mxschmitt/action-tmate@v2
