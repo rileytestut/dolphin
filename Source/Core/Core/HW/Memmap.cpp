@@ -227,27 +227,6 @@ static std::vector<LogicalMemoryView> logical_mapped_entries;
 
 void Init()
 {
-  bool wii = SConfig::GetInstance().bWii;
-  bool bMMU = SConfig::GetInstance().bMMU;
-  bool bFakeVMEM = false;
-#ifndef _ARCH_32
-  // If MMU is turned off in GameCube mode, turn on fake VMEM hack.
-  // The fake VMEM hack's address space is above the memory space that we
-  // allocate on 32bit targets, so disable it there.
-  bFakeVMEM = !wii && !bMMU;
-#endif
-
-  u32 flags = 0;
-  if (wii)
-    flags |= PhysicalMemoryRegion::WII_ONLY;
-  if (bFakeVMEM)
-    flags |= PhysicalMemoryRegion::FAKE_VMEM;
-
-  return flags;
-}
-
-void Init()
-{
   const auto get_mem1_size = [] {
     if (Config::Get(Config::MAIN_RAM_OVERRIDE_ENABLE))
       return Config::Get(Config::MAIN_MEM1_SIZE);
@@ -277,7 +256,20 @@ void Init()
   physical_regions[3] = {&m_pEXRAM, 0x10000000, GetExRamSize(), PhysicalMemoryRegion::WII_ONLY};
 
   bool wii = SConfig::GetInstance().bWii;
-  u32 flags = GetFlags();
+  bool bMMU = SConfig::GetInstance().bMMU;
+  bool bFakeVMEM = false;
+#ifndef _ARCH_32
+  // If MMU is turned off in GameCube mode, turn on fake VMEM hack.
+  // The fake VMEM hack's address space is above the memory space that we
+  // allocate on 32bit targets, so disable it there.
+  bFakeVMEM = !wii && !bMMU;
+#endif
+
+  u32 flags = 0;
+  if (wii)
+    flags |= PhysicalMemoryRegion::WII_ONLY;
+  if (bFakeVMEM)
+    flags |= PhysicalMemoryRegion::FAKE_VMEM;
   u32 mem_size = 0;
   for (PhysicalMemoryRegion& region : physical_regions)
   {
