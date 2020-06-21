@@ -125,7 +125,7 @@ jobs:
         mkdir build-Xcode
         cd Source/iOS/DolphiniOS
         xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" {{ env.XCODEBUILD_ARGS }}    
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}    
         
     - name: Package (Normal)
       env:
