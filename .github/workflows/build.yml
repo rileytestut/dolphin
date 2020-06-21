@@ -73,7 +73,7 @@ jobs:
         IS_CI: "YES"
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
+        cp -R "${{ github.workspace }}/build-Xcode/Release (Non-Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
         Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildIpa.sh build.keychain NJB_IPA_PATH
         
     - name: Upload
