@@ -15,8 +15,8 @@ jobs:
     
     - name: Install build utilities
       run: |
-        brew install ninja bartycrouch dpkg s3cmd
-        pip3 install polib
+        brew install ninja bartycrouch dpkg s3cmd libmagic
+        pip3 install polib python-magic
         
     - name: Create Keychain
       run: |
@@ -71,6 +71,3 @@ jobs:
         BUCKET_ROOT_PATH: "s3://wii-sports/dolphinios/ci/"
       run: |
         s3cmd put ${{ env.JB_DEB_PATH }}/DolphiniOS.deb ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
-        
-    - name: tmate
-      uses: mxschmitt/action-tmate@v2
