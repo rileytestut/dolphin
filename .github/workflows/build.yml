@@ -15,7 +15,7 @@ jobs:
     
     - name: Install build utilities
       run: |
-        brew install ninja bartycrouch dpkg s3cmd libmagic
+        brew install ninja bartycrouch dpkg s3cmd libmagic dos2unix
         pip3 install polib python-magic
         
     - name: Create Keychain
@@ -27,10 +27,15 @@ jobs:
         security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
         
-    - name: Decrypt Firebase Property List
+    - name: Prepare Resources
       run: |
         cd Source/iOS/DolphiniOS/DolphiniOS
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $((${{ github.run_number }} - 1))" Info.plist
+        cd BundleResources
+        rm SpecialThanks.txt
+        wget -O SpecialThanks.txt https://smash.oatmealdome.me/parts/patrons.txt
+        dos2unix SpecialThanks.txt
     
     - name: Cache CocoaPods
       uses: actions/cache@v1
@@ -90,7 +95,7 @@ jobs:
     
     - name: Install build utilities
       run: |
-        brew install ninja bartycrouch dpkg s3cmd libmagic
+        brew install ninja bartycrouch dpkg s3cmd libmagic dos2unix
         pip3 install polib python-magic
         
     - name: Create Keychain
@@ -102,10 +107,15 @@ jobs:
         security import Source/iOS/DolphiniOS/DolphiniOS/BuildResources/OatmealDomeSoftware.p12 -k build.keychain -P ${{ secrets.CERTIFICATE_GPG_PASSWORD }} -A
         security set-key-partition-list -S apple-tool:,apple: -s -k alpine build.keychain
         
-    - name: Decrypt Firebase Property List
+    - name: Prepare Resources
       run: |
         cd Source/iOS/DolphiniOS/DolphiniOS
         gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.FIREBASE_GPG_PASSWORD }}" --output GoogleService-Info.plist GoogleService-Info.plist.gpg
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $((${{ github.run_number }} - 1))" Info.plist
+        cd BundleResources
+        rm SpecialThanks.txt
+        wget -O SpecialThanks.txt https://smash.oatmealdome.me/parts/patrons.txt
+        dos2unix SpecialThanks.txt
     
     - name: Cache CocoaPods
       uses: actions/cache@v1
