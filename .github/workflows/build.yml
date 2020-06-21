@@ -67,7 +67,7 @@ jobs:
         
     - name: Upload
       env:
-        S3CMD_ARGS: "--access_key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }} --host-bucket=%(bucket)s.${{ secrets.SPACES_ENDPOINT }}"
+        S3CMD_ARGS: "--access_key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }} --host-bucket=%\\(bucket\\)s.${{ secrets.SPACES_ENDPOINT }}"
         BUCKET_ROOT_PATH: "s3://wii-sports/dolphinios/ci/"
       run: |
         s3cmd put ${{ env.JB_DEB_PATH }}/DolphiniOS.deb ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
