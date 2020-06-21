@@ -49,25 +49,37 @@ jobs:
       run: |
         mkdir build-Xcode
         cd Source/iOS/DolphiniOS
-        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
+        #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
-        #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
+        xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Non-Jailbroken)" -scheme "DolphiniOS" ${{ env.XCODEBUILD_ARGS }}
         #xcodebuild -workspace DolphiniOS.xcworkspace -configuration "Release (Patreon Non-Jailbroken)" -scheme "DolphiniOS" {{ env.XCODEBUILD_ARGS }}    
       
-    - name: Package
+    #- name: Package (JB)
+    #  env:
+    #    PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
+    #    ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root-jb"
+    #    BUILD_FOR_PATREON: "NO"
+    #    IS_CI: "YES"
+    #  run: |
+    #    mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
+    #    cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
+    #    Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain JB_DEB_PATH
+        
+    - name: Package (NJB)
       env:
         PROJECT_DIR: "${{ github.workspace }}/Source/iOS/DolphiniOS"
-        ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root"
+        ARCHIVE_PATH: "${{ github.workspace }}/build-Xcode/archive-root-njb"
         BUILD_FOR_PATREON: "NO"
         IS_CI: "YES"
       run: |
         mkdir -p ${{ env.ARCHIVE_PATH }}/Products/Applications/
         cp -R "${{ github.workspace }}/build-Xcode/Release (Jailbroken)-iphoneos/DolphiniOS.app" ${{ env.ARCHIVE_PATH }}/Products/Applications/
-        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildDebs.sh build.keychain JB_DEB_PATH
+        Source/iOS/DolphiniOS/DolphiniOS/BuildResources/BuildScripts/BuildIpa.sh build.keychain NJB_IPA_PATH
         
     - name: Upload
       env:
         S3CMD_ARGS: "--access_key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }} --host-bucket=%\\(bucket\\)s.${{ secrets.SPACES_ENDPOINT }}"
         BUCKET_ROOT_PATH: "s3://wii-sports/dolphinios/ci"
       run: |
-        s3cmd put ${{ env.JB_DEB_PATH }}/DolphiniOS.deb ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
+        #s3cmd put ${{ env.JB_DEB_PATH }}/DolphiniOS.deb ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-JB-${{ github.run_number }}.deb ${{ env.S3CMD_ARGS }}
+        s3cmd put ${{ env.NJB_IPA_PATH }}/DolphiniOS-NJB.ipa ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-NJB-${{ github.run_number }}.ipa ${{ env.S3CMD_ARGS }}
