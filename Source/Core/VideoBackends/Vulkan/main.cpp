@@ -283,24 +283,13 @@ void VideoBackend::Shutdown()
 #if defined(VK_USE_PLATFORM_METAL_EXT)
 static bool IsRunningOnMojaveOrHigher()
 {
-  // id processInfo = [NSProcessInfo processInfo]
-  id processInfo = reinterpret_cast<id (*)(Class, SEL)>(objc_msgSend)(
-      objc_getClass("NSProcessInfo"), sel_getUid("processInfo"));
-  if (!processInfo)
-    return false;
-
-  struct OSVersion  // NSOperatingSystemVersion
+  // __builtin_available cannot be negated directly, so this helper function is still necessary
+  if (__builtin_available(macOS 10.14, *))
   {
-    size_t major_version;  // NSInteger majorVersion
-    size_t minor_version;  // NSInteger minorVersion
-    size_t patch_version;  // NSInteger patchVersion
-  };
+    return true;
+  }
 
-  // const bool meets_requirement = [processInfo isOperatingSystemAtLeastVersion:required_version];
-  constexpr OSVersion required_version = {10, 14, 0};
-  const bool meets_requirement = reinterpret_cast<bool (*)(id, SEL, OSVersion)>(objc_msgSend)(
-      processInfo, sel_getUid("isOperatingSystemAtLeastVersion:"), required_version);
-  return meets_requirement;
+  return false;
 }
 #endif
 
