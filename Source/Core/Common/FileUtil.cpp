@@ -45,7 +45,6 @@
 #include <CoreFoundation/CFBundle.h>
 #include <CoreFoundation/CFString.h>
 #include <CoreFoundation/CFURL.h>
-#include <dlfcn.h>
 #include <mach-o/dyld.h>
 #include <sys/param.h>
 #endif
@@ -66,14 +65,13 @@ static std::string s_android_sys_directory;
 #ifdef __APPLE__
 static Common::DynamicLibrary s_security_framework;
 
-typedef Boolean (*dolSecTranslocateIsTranslocatedURL)(CFURLRef path, bool* isTranslocated,
-                                                      CFErrorRef* __nullable error);
-typedef CFURLRef
-    __nullable (*dolSecTranslocateCreateOriginalPathForURL)(CFURLRef translocatedPath,
-                                                            CFErrorRef* __nullable error);
+using DolSecTranslocateIsTranslocatedURL = Boolean (*)(CFURLRef path, bool* isTranslocated,
+                                                       CFErrorRef* __nullable error);
+using DolSecTranslocateCreateOriginalPathForURL = CFURLRef
+__nullable (*)(CFURLRef translocatedPath, CFErrorRef* __nullable error);
 
-static dolSecTranslocateIsTranslocatedURL s_is_translocated_url;
-static dolSecTranslocateCreateOriginalPathForURL s_create_orig_path;
+static DolSecTranslocateIsTranslocatedURL s_is_translocated_url;
+static DolSecTranslocateCreateOriginalPathForURL s_create_orig_path;
 #endif
 
 #ifdef _WIN32
@@ -702,11 +700,11 @@ std::string GetBundleDirectory()
     }
 
     bool is_translocated = false;
-    s_is_translocated_url(bundle_ref, &is_translocated, NULL);
+    s_is_translocated_url(bundle_ref, &is_translocated, nullptr);
 
     if (is_translocated)
     {
-      CFURLRef untranslocated_ref = s_create_orig_path(bundle_ref, NULL);
+      CFURLRef untranslocated_ref = s_create_orig_path(bundle_ref, nullptr);
       CFRelease(bundle_ref);
       bundle_ref = untranslocated_ref;
     }
