@@ -161,7 +161,7 @@ jobs:
         
     - name: Upload
       env:
-        S3CMD_ARGS: "--access_key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }}"
+        S3CMD_ARGS: "--access_key=${{ secrets.SPACES_KEY }} --secret_key=${{ secrets.SPACES_SECRET }} --host=${{ secrets.SPACES_ENDPOINT }} --host-bucket=${{ secrets.S3_BUCKET }}"
         BUCKET_ROOT_PATH: "s3://dios-archive/builds"
       run: |
         s3cmd put ${{ env.NJB_IPA_PATH }}/DolphiniOS-NJB.ipa ${{ env.BUCKET_ROOT_PATH }}/DolphiniOS-NJB-${{ github.run_number }}.ipa ${{ env.S3CMD_ARGS }}
