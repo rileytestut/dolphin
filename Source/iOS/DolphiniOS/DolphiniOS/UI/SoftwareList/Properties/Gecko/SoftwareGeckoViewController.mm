@@ -48,7 +48,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-  [self viewWillDisappear:animated];
+  [super viewWillDisappear:animated];
   
   [self SaveCodes];
 }
