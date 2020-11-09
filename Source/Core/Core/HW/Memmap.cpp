@@ -338,7 +338,7 @@ bool InitFastmemArena()
   }
 
 #ifndef _ARCH_32
-  logical_base = physical_base + 0x200000000;
+  logical_base = physical_base + 0x40000000;
 #endif
 
   is_fastmem_arena_initialized = true;

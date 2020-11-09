@@ -10,7 +10,7 @@ bool CanEnableFastmem(void)
 {
   static dispatch_once_t once;
   dispatch_once(&once, ^{
-    const size_t memory_size = 0x400000000;
+    const size_t memory_size = 0x80000000;
     
     vm_address_t addr = 0;
     kern_return_t retval = vm_allocate(mach_task_self(), &addr, memory_size, VM_FLAGS_ANYWHERE);

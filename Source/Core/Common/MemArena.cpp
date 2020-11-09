@@ -169,7 +169,7 @@ u8* MemArena::FindMemoryBase()
 #if _ARCH_32
   const size_t memory_size = 0x31000000;
 #else
-  const size_t memory_size = 0x400000000;
+  const size_t memory_size = 0x80000000; // 2GB
 #endif
 
 #ifdef _WIN32
