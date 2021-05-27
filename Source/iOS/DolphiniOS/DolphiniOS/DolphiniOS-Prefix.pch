@@ -6,3 +6,4 @@
 
 #import "LocalizerUtils.h"
 #import "StringUtils.h"
+#import "RSTComponents.h"

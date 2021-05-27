@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GraphicsSettingsUtils : NSObject
 
-+ (void)SetInitialForBoolSetting:(const Config::Info<bool>&)setting isInverted:(bool)inverted forSwitch:(UISwitch*)sw label:(UILabel*)label;
++ (void)SetInitialForBoolSetting:(const Config::Info<bool>&)setting isInverted:(bool)inverted forSwitch:(RSTSwitch*)sw label:(UILabel*)label;
 + (void)SetInitialForTransitionCell:(const Config::Info<int>&)setting forLabel:(UILabel*)label;
 + (void)SetInitialForTransitionCellU32:(const Config::Info<u32>&)setting forLabel:(UILabel*)label;
 + (void)ShowInfoAlertForLocalizable:(NSString*)localizable onController:(UIViewController*)target_controller;

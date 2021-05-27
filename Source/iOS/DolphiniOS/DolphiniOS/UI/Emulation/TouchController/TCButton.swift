@@ -47,8 +47,8 @@ class TCButton: UIButton
   func sharedInit()
   {
     self.setTitle("", for: .normal)
-    self.addTarget(self, action: #selector(buttonPressed), for: .touchDown)
-    self.addTarget(self, action: #selector(buttonReleased), for: .touchUpInside)
+    self.addTarget(self, action: #selector(buttonPressed), for: .primaryActionTriggered)
+    self.addTarget(self, action: #selector(buttonReleased), for: .primaryActionTriggered)
     
     let threed_touch_enabled: Bool = UserDefaults.standard.bool(forKey: "3d_touch_analog_triggers_enabled")
     self.m_use_3d_touch = threed_touch_enabled && self.traitCollection.forceTouchCapability == .available

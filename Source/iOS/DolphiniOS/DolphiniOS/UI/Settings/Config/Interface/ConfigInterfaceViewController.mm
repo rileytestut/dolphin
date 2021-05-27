@@ -30,36 +30,48 @@
 {
   [super viewWillAppear:animated];
   
+#if !TARGET_OS_TV
   [self.m_confirm_stop_switch setOn:SConfig::GetInstance().bConfirmStop];
   [self.m_panic_handlers_switch setOn:SConfig::GetInstance().bUsePanicHandlers];
   [self.m_osd_switch setOn:SConfig::GetInstance().bOnScreenDisplayMessages];
   [self.m_center_image_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"do_not_raise_rendering_view"]];
   [self.m_status_bar_switch setOn:[[NSUserDefaults standardUserDefaults] boolForKey:@"show_status_bar"]];
+#endif
 }
 
 - (IBAction)ConfirmStopChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().bConfirmStop = [self.m_confirm_stop_switch isOn];
+#endif
 }
 
 - (IBAction)UsePanicHandlersChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().bUsePanicHandlers = [self.m_panic_handlers_switch isOn];
   Common::SetEnableAlert([self.m_panic_handlers_switch isOn]);
+#endif
 }
 
 - (IBAction)ShowOsdChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().bOnScreenDisplayMessages = [self.m_osd_switch isOn];
+#endif
 }
 
 - (IBAction)CenterImageChanged:(id)sender
 {
+#if !TARGET_OS_TV
   [[NSUserDefaults standardUserDefaults] setBool:[self.m_center_image_switch isOn] forKey:@"do_not_raise_rendering_view"];
+#endif
 }
 
 - (IBAction)ShowStatusBarChanged:(id)sender {
+#if !TARGET_OS_TV
   [[NSUserDefaults standardUserDefaults] setBool:[self.m_status_bar_switch isOn] forKey:@"show_status_bar"];
+#endif
 }
 
 @end

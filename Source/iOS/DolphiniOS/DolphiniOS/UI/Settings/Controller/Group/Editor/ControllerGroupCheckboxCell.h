@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic) ControllerEmu::NumericSetting<bool>* m_setting;
 
 @property(weak, nonatomic) IBOutlet UILabel* m_name_label;
-@property(weak, nonatomic) IBOutlet UISwitch* m_switch;
+@property(weak, nonatomic) IBOutlet RSTSwitch* m_switch;
 
 - (void)SetupCellWithSetting:(ControllerEmu::NumericSetting<bool>*)setting;
 

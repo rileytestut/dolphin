@@ -22,13 +22,17 @@
 {
   [super viewWillAppear:animated];
   
+#if !TARGET_OS_TV
   [self.m_skip_ipl_switch setOn:SConfig::GetInstance().bHLE_BS2];
+#endif
 }
 
 - (IBAction)SkipIPLChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().bHLE_BS2 = [self.m_skip_ipl_switch isOn];
   Config::SetBaseOrCurrent(Config::MAIN_SKIP_IPL, [self.m_skip_ipl_switch isOn]);
+#endif
 }
 
 

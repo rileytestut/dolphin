@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="18122" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,20 +21,20 @@
             </connections>
         </placeholder>
         <view contentMode="scaleToFill" id="r55-Fn-aBI">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W3E-IV-CzC" userLabel="Header Stack">
-                    <rect key="frame" x="0.0" y="63.999999999999986" width="375" height="183.66666666666663"/>
+                    <rect key="frame" x="80" y="80" width="1760" height="240"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SF_icloud_and_arrow_down" translatesAutoresizingMaskIntoConstraints="NO" id="IUQ-qk-Kke">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1760" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="hmP-nM-OsB"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKg-MP-jJG">
-                            <rect key="frame" x="0.0" y="100" width="375" height="83.666666666666686"/>
+                            <rect key="frame" x="0.0" y="100" width="1760" height="140"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -42,25 +42,25 @@
                     </subviews>
                 </stackView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo7-Aa-Z1e">
-                    <rect key="frame" x="0.0" y="247.66666666666666" width="375" height="280.33333333333337"/>
+                    <rect key="frame" x="80" y="320" width="1760" height="450"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="90n-Az-9Cs" userLabel="Content Stack">
-                            <rect key="frame" x="20" y="0.0" width="335" height="80.666666666666671"/>
+                            <rect key="frame" x="20" y="0.0" width="1720" height="82"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DolphiniOS version 1.0.0 is now available." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2L-KW-hUh" userLabel="Version Text">
-                                    <rect key="frame" x="11.333333333333343" y="0.0" width="312.66666666666663" height="20.333333333333332"/>
+                                    <rect key="frame" x="704.5" y="0.0" width="311" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changes Placeholder" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRL-yG-mYd" userLabel="Changes">
-                                    <rect key="frame" x="86.333333333333329" y="40.333333333333343" width="162.66666666666669" height="20.333333333333329"/>
+                                    <rect key="frame" x="779" y="41" width="162" height="21"/>
                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luA-1B-bZp" userLabel="Save States Warning">
-                                    <rect key="frame" x="-255.66666666666666" y="70.666666666666657" width="846.33333333333337" height="0.0"/>
+                                    <rect key="frame" x="439" y="72" width="842" height="0.0"/>
                                     <string key="text">WARNING: Save states made on this version of DolphiniOS cannot be loaded after updating to the new version.
 
 Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.</string>
@@ -68,8 +68,8 @@ Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uo-Rc-2vE">
-                                    <rect key="frame" x="47.666666666666686" y="80.666666666666657" width="240" height="0.0"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <rect key="frame" x="740" y="82" width="240" height="0.0"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="kge-k2-qnG"/>
                                     </constraints>
@@ -88,17 +88,17 @@ Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.
                     <viewLayoutGuide key="frameLayoutGuide" id="BUq-vD-SSA"/>
                 </scrollView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o40-Qv-36o">
-                    <rect key="frame" x="0.0" y="528" width="375" height="250"/>
+                    <rect key="frame" x="80" y="770" width="1760" height="250"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fA2-eu-kzr">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1760" height="250"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="np2-xh-cqO">
-                                    <rect key="frame" x="20" y="20" width="335" height="210"/>
+                                    <rect key="frame" x="20" y="20" width="1720" height="210"/>
                                     <subviews>
-                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPS-qP-47c">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
-                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPS-qP-47c">
+                                            <rect key="frame" x="0.0" y="0.0" width="1720" height="45"/>
+                                            <color key="backgroundColor" systemColor="linkColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="j1f-m3-E7Q"/>
                                             </constraints>
@@ -115,23 +115,23 @@ Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.
                                                 <action selector="UpdateNowTouched:" destination="-1" eventType="touchUpInside" id="xf7-wB-kXA"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-vN-h8U">
-                                            <rect key="frame" x="0.0" y="55" width="335" height="45"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddp-vN-h8U">
+                                            <rect key="frame" x="0.0" y="55" width="1720" height="45"/>
                                             <state key="normal" title="See Changes"/>
                                             <connections>
                                                 <action selector="SeeChangesTouched:" destination="-1" eventType="touchUpInside" id="Ufq-UN-Xnz"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-1y-bUR">
-                                            <rect key="frame" x="0.0" y="110" width="335" height="45"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-1y-bUR">
+                                            <rect key="frame" x="0.0" y="110" width="1720" height="45"/>
                                             <state key="normal" title="Not Now"/>
                                             <connections>
                                                 <action selector="NotNowTouched:" destination="-1" eventType="touchUpInside" id="0DW-FT-gYw"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkk-bg-6CS">
-                                            <rect key="frame" x="0.0" y="165" width="335" height="45"/>
-                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkk-bg-6CS">
+                                            <rect key="frame" x="0.0" y="165" width="1720" height="45"/>
+                                            <color key="backgroundColor" systemColor="linkColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="Flt-p5-KhZ"/>
                                             </constraints>
@@ -151,7 +151,7 @@ Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="np2-xh-cqO" secondAttribute="trailing" constant="20" id="JXH-sX-p11"/>
                                 <constraint firstAttribute="bottom" secondItem="np2-xh-cqO" secondAttribute="bottom" constant="20" symbolic="YES" id="QZU-m1-iIj"/>
@@ -162,7 +162,8 @@ Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.
                     </subviews>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <viewLayoutGuide key="safeArea" id="Bm9-Am-iRC"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="W3E-IV-CzC" firstAttribute="leading" secondItem="Bm9-Am-iRC" secondAttribute="leading" id="5GE-q5-pch"/>
                 <constraint firstItem="W3E-IV-CzC" firstAttribute="height" secondItem="Bm9-Am-iRC" secondAttribute="height" multiplier="1:4" id="EpQ-3r-cdM"/>
@@ -176,12 +177,17 @@ Save data on GameCube Memory Cards or the emulated Wii's memory is not affected.
                 <constraint firstItem="o40-Qv-36o" firstAttribute="leading" secondItem="Bm9-Am-iRC" secondAttribute="leading" id="hZ3-lK-dtJ"/>
                 <constraint firstItem="uo7-Aa-Z1e" firstAttribute="leading" secondItem="Bm9-Am-iRC" secondAttribute="leading" id="yLl-4y-JII"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Bm9-Am-iRC"/>
             <point key="canvasLocation" x="-1026" y="204"/>
         </view>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
     </objects>
     <resources>
         <image name="SF_icloud_and_arrow_down" width="512" height="512"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

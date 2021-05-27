@@ -29,9 +29,13 @@
   
   //[self.m_volume_slider setValue:SConfig::GetInstance().m_Volume];
   //[self UpdateVolumePercentageLabel];
+    
+#if !TARGET_OS_TV
   [self.m_stretching_switch setOn:SConfig::GetInstance().m_audio_stretch];
   [self.m_buffer_size_slider setEnabled:SConfig::GetInstance().m_audio_stretch];
   [self.m_buffer_size_slider setValue:SConfig::GetInstance().m_audio_stretch_max_latency];
+#endif
+    
   [self UpdateBufferSizeLabel];
 }
 
@@ -44,19 +48,25 @@
 
 - (IBAction)VolumeChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().m_Volume = [self.m_volume_slider value];
+#endif
   [self UpdateVolumePercentageLabel];
 }
 
 - (IBAction)StretchingToggled:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().m_audio_stretch = [self.m_stretching_switch isOn];
   [self.m_buffer_size_slider setEnabled:[self.m_stretching_switch isOn]];
+#endif
 }
 
 - (IBAction)BufferSizeChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().m_audio_stretch_max_latency = [self.m_buffer_size_slider value];
+#endif
   [self UpdateBufferSizeLabel];
 }
 

@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="18122" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,26 +13,26 @@
             <objects>
                 <tableViewController storyboardIdentifier="Root" title="Settings" id="B4L-TL-IR8" customClass="SettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="qhA-SE-P6n">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection id="eQ7-vc-tu7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="43.5" id="Mxg-LL-MsL">
-                                        <rect key="frame" x="16" y="18" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="0.0" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mxg-LL-MsL" id="YGx-IJ-9gj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1728" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Version" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-PL-Io8">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="57" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="57" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TO3-cy-H2Y">
-                                                    <rect key="frame" x="73" y="11.333333333333336" width="254" height="21"/>
+                                                    <rect key="frame" x="77" y="11.5" width="1631" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,14 +50,14 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="CaZ-Mp-nvd">
-                                        <rect key="frame" x="16" y="61.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="57.5" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CaZ-Mp-nvd" id="QGj-I9-o8d">
-                                            <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1688" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Dolphin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZC-s5-S3W">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="299.66666666666669" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1668" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -76,14 +75,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="kkg-ea-pcS">
-                                        <rect key="frame" x="16" y="105" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="115" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kkg-ea-pcS" id="GJA-nB-GHQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1688" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfe-JF-PdQ">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="299.66666666666669" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1668" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -102,14 +101,14 @@
                             <tableViewSection id="u1a-mL-gQL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="Jt1-vy-78i">
-                                        <rect key="frame" x="16" y="184.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="172.5" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jt1-vy-78i" id="gby-hl-yis">
-                                            <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1688" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Config" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0Q-3C-VDC">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="299.66666666666669" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1668" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -127,14 +126,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="VR7-7r-GB2">
-                                        <rect key="frame" x="16" y="228" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="230" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VR7-7r-GB2" id="66F-Pa-HfN">
-                                            <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1688" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Graphics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6BT-cH-KPV">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="299.66666666666669" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1668" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -152,14 +151,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="m5z-a3-Ash">
-                                        <rect key="frame" x="16" y="271.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="287.5" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m5z-a3-Ash" id="SJm-bS-iPh">
-                                            <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1688" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Controllers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpQ-qK-CHk">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="299.66666666666669" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1668" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -177,14 +176,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="43.5" id="KQV-In-NsS">
-                                        <rect key="frame" x="16" y="315" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="345" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KQV-In-NsS" id="a0c-VV-pUQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="315.66666666666669" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1688" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6JD-gF-g10">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="299.66666666666669" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1668" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -206,14 +205,14 @@
                             <tableViewSection id="iWt-hv-Y73">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="43.5" id="mhR-QE-MIb">
-                                        <rect key="frame" x="16" y="394.5" width="343" height="43.5"/>
+                                        <rect key="frame" x="96" y="402.5" width="1728" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mhR-QE-MIb" id="LOk-rV-BiK">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1728" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1co-pK-Y2u">
-                                                    <rect key="frame" x="16" y="11.000000000000002" width="307" height="21.666666666666671"/>
+                                                    <rect key="frame" x="20" y="10" width="1688" height="23.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
@@ -261,7 +260,7 @@
             <objects>
                 <navigationController modalPresentationStyle="formSheet" id="0MN-yo-f4X" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HMz-8x-dda">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <rect key="frame" x="0.0" y="60" width="1920" height="145"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -276,37 +275,41 @@
         <scene sceneID="lwp-5B-en0">
             <objects>
                 <viewController title="About Dolphin" modalPresentationStyle="formSheet" id="u6n-zE-oUh" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gGC-KA-WWK"/>
+                        <viewControllerLayoutGuide type="bottom" id="dxt-nc-PTA"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jbG-Nv-nDL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OBc-Qf-YQt">
-                                <rect key="frame" x="0.0" y="56" width="375" height="668"/>
+                                <rect key="frame" x="80" y="205" width="1760" height="815"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EUw-Jf-ZuR">
-                                        <rect key="frame" x="20" y="0.0" width="335" height="676.66666666666663"/>
+                                        <rect key="frame" x="20" y="0.0" width="1720" height="545"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-Da-q5L">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1720" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="w5T-td-XXt"/>
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DolphinLogo" translatesAutoresizingMaskIntoConstraints="NO" id="6lk-TR-wBN" userLabel="Logo">
-                                                <rect key="frame" x="0.0" y="20" width="335" height="128"/>
+                                                <rect key="frame" x="0.0" y="20" width="1720" height="128"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="128" id="xDy-Yp-vjK"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DolphiniOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrK-0b-KPM">
-                                                <rect key="frame" x="0.0" y="168" width="335" height="33.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="168" width="1720" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                                                 <color key="textColor" systemColor="systemBlueColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw7-Nn-kBa" userLabel="Copyright One">
-                                                <rect key="frame" x="0.0" y="221.66666666666671" width="335" height="81.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="222" width="1720" height="41"/>
                                                 <string key="text">© 2003-2015+ Dolphin Team. “GameCube” and “Wii” are trademarks of Nintendo. 
 Dolphin is not affiliated with Nintendo in any way.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -314,7 +317,7 @@ Dolphin is not affiliated with Nintendo in any way.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JH-mf-sk9" userLabel="Copyright Two">
-                                                <rect key="frame" x="0.0" y="323" width="335" height="122"/>
+                                                <rect key="frame" x="0.0" y="283" width="1720" height="41"/>
                                                 <string key="text">© 2019-2020+ OatmealDome, Simonx22, goob47, and yoshisuga.
 DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. The DolphiniOS team has no relation to the official Dolphin project or its mainainers.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -322,28 +325,28 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This software should not be used to play games you do not legally own." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6q-Ez-JFr" userLabel="Piracy Notice">
-                                                <rect key="frame" x="0.0" y="465" width="335" height="40.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="344" width="1720" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you to the following generous Patrons!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apg-2S-OEc">
-                                                <rect key="frame" x="0.0" y="525.66666666666663" width="335" height="40.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="385" width="1720" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hnr-d2-FCH">
-                                                <rect key="frame" x="0.0" y="586.33333333333337" width="335" height="20.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="426" width="1720" height="21"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patrons 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qg5-mQ-I0A">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="20.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="860" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patrons 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zt-R7-qCU">
-                                                        <rect key="frame" x="167.66666666666663" y="0.0" width="167.33333333333337" height="20.333333333333332"/>
+                                                        <rect key="frame" x="860" y="0.0" width="860" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -351,14 +354,14 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sud-8v-xe3">
-                                                <rect key="frame" x="0.0" y="626.66666666666663" width="335" height="30"/>
+                                                <rect key="frame" x="0.0" y="467" width="1720" height="58"/>
                                                 <state key="normal" title="Source Code"/>
                                                 <connections>
                                                     <action selector="SourceCodePressed:" destination="u6n-zE-oUh" eventType="touchUpInside" id="fZp-pU-kEd"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-m9-tq2">
-                                                <rect key="frame" x="0.0" y="676.66666666666663" width="335" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="545" width="1720" height="0.0"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="Iug-ms-yiu"/>
@@ -421,7 +424,7 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
             <objects>
                 <tableViewController id="6VJ-jD-NfQ" customClass="SettingsDebugViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="M6Q-YG-qUz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <sections>
                             <tableViewSection headerTitle="JIT" id="p0Y-AI-hYS">
@@ -460,12 +463,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-Od-MOw">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="LoadStoreChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="F6H-xz-lgN"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7R-Od-MOw">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="LoadStoreChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="F6H-xz-lgN"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="s98-qA-2g6" firstAttribute="centerY" secondItem="jsv-cF-pma" secondAttribute="centerY" id="Pro-M4-Tga"/>
@@ -489,12 +492,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHO-HA-zJE">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="LoadStoreFpChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="aGz-TM-yhr"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHO-HA-zJE">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="LoadStoreFpChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="aGz-TM-yhr"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="li5-FM-I1H" firstAttribute="centerY" secondItem="q3K-48-b7q" secondAttribute="centerY" id="1mx-yh-FDp"/>
@@ -518,12 +521,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6m-Hj-mwh">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="LoadStorePChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="0wB-yN-gBV"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f6m-Hj-mwh">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="LoadStorePChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="0wB-yN-gBV"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="pYP-Ko-kX7" firstAttribute="centerY" secondItem="YWe-As-HHq" secondAttribute="centerY" id="IOU-2O-zaJ"/>
@@ -547,12 +550,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-ts-PuQ">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="FpChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="086-39-A3D"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-ts-PuQ">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="FpChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="086-39-A3D"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="L2G-aP-P6r" firstAttribute="leading" secondItem="Sze-Pc-ow3" secondAttribute="leadingMargin" id="0Vm-7G-1EU"/>
@@ -576,12 +579,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Q7-Fm-UJm">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="IntegerChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="gew-s1-tjV"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Q7-Fm-UJm">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="IntegerChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="gew-s1-tjV"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="bxk-99-Snh" firstAttribute="centerY" secondItem="wzs-x4-cjz" secondAttribute="centerY" id="EkX-NN-iUE"/>
@@ -605,12 +608,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QaQ-1z-SsJ">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="PChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="BUP-CH-jjU"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QaQ-1z-SsJ">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="PChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="BUP-CH-jjU"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="QaQ-1z-SsJ" firstAttribute="leading" secondItem="G79-OZ-WTs" secondAttribute="trailing" id="8RD-Kz-QQY"/>
@@ -634,12 +637,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-ii-cl1">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="SystemRegistersChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="0iS-9j-oT3"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xc1-ii-cl1">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="SystemRegistersChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="0iS-9j-oT3"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="H8K-qf-aQf" firstAttribute="centerY" secondItem="Qsw-XV-Ad3" secondAttribute="centerY" id="Fr3-v2-Nu7"/>
@@ -663,12 +666,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-jJ-akF">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="BranchChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="HJ4-Z0-68p"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-jJ-akF">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="BranchChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="HJ4-Z0-68p"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="kpl-jJ-akF" firstAttribute="centerY" secondItem="iXf-9g-coU" secondAttribute="centerY" id="5zt-6T-7rX"/>
@@ -692,12 +695,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-ve-brL">
-                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="RegisterCacheChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="yaL-9a-YC3"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaX-ve-brL">-->
+<!--                                                    <rect key="frame" x="278" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="RegisterCacheChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="yaL-9a-YC3"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="IaX-ve-brL" firstAttribute="centerY" secondItem="Ths-ZI-pda" secondAttribute="centerY" id="6gq-YM-OPL"/>
@@ -725,12 +728,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqt-aK-CNs">
-                                                    <rect key="frame" x="246" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="SkipIdleChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="dtT-EQ-uzG"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqt-aK-CNs">-->
+<!--                                                    <rect key="frame" x="246" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="SkipIdleChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="dtT-EQ-uzG"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jqt-aK-CNs" firstAttribute="leading" secondItem="NGt-fz-75k" secondAttribute="trailing" id="8J6-Aq-Re8"/>
@@ -754,12 +757,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts1-id-DRO">
-                                                    <rect key="frame" x="246" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="FastmemChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="UkI-gK-GAO"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts1-id-DRO">-->
+<!--                                                    <rect key="frame" x="246" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="FastmemChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="UkI-gK-GAO"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ts1-id-DRO" secondAttribute="trailing" id="KMq-ze-h6i"/>
@@ -783,12 +786,12 @@ DolphiniOS is an unofficial and separately maintained port of Dolphin to iOS. Th
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-w3-ZTR">
-                                                    <rect key="frame" x="246" y="6.6666666666666679" width="51" height="31.000000000000004"/>
-                                                    <connections>
-                                                        <action selector="HackyFastmemChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="fR7-q2-j8m"/>
-                                                    </connections>
-                                                </switch>
+<!--                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bhf-w3-ZTR">-->
+<!--                                                    <rect key="frame" x="246" y="6.6666666666666679" width="51" height="31.000000000000004"/>-->
+<!--                                                    <connections>-->
+<!--                                                        <action selector="HackyFastmemChanged:" destination="6VJ-jD-NfQ" eventType="valueChanged" id="fR7-q2-j8m"/>-->
+<!--                                                    </connections>-->
+<!--                                                </switch>-->
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Bhf-w3-ZTR" firstAttribute="leading" secondItem="chE-HL-YEC" secondAttribute="trailing" id="1BA-xK-r1R"/>

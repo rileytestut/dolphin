@@ -75,7 +75,7 @@
   game_ini_local.Save(File::GetUserPath(D_GAMESETTINGS_IDX) + game_id + ".ini");
 }
 
-- (IBAction)EnabledChanged:(UISwitch*)sender
+- (IBAction)EnabledChanged:(RSTSwitch*)sender
 {
   self->m_patches[sender.tag].active = [sender isOn];
 }

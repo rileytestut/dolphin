@@ -27,37 +27,48 @@
 {
   [super viewWillAppear:animated];
   
+#if !TARGET_OS_TV
   [self.m_mmu_switch setOn:SConfig::GetInstance().bMMU];
   [self.m_overclock_switch setOn:SConfig::GetInstance().m_OCEnable];
+#endif
   
   bool running = Core::GetState() != Core::State::Uninitialized;
   [[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] setUserInteractionEnabled:!running];
+    
+#if !TARGET_OS_TV
   [self.m_mmu_switch setEnabled:!running];
   [self.m_overclock_switch setEnabled:!running];
   
   [self.m_overclock_slider setValue:static_cast<int>(std::round(std::log2f(SConfig::GetInstance().m_OCFactor) * 25.f + 100.f))];
+#endif
   
   [self UpdateOverclockSlider];
 }
 
 - (IBAction)MMUChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().bMMU = [self.m_mmu_switch isOn];
+#endif
 }
 
 - (IBAction)OverclockEnabledChanged:(id)sender
 {
+#if !TARGET_OS_TV
   SConfig::GetInstance().m_OCEnable = [self.m_overclock_switch isOn];
   Config::SetBaseOrCurrent(Config::MAIN_OVERCLOCK_ENABLE, [self.m_overclock_switch isOn]);
+#endif
   
   [self UpdateOverclockSlider];
 }
 
 - (IBAction)OverclockSliderChanged:(id)sender
 {
+#if !TARGET_OS_TV
   const float factor = std::exp2f(([self.m_overclock_slider value] - 100.f) / 25.f);
   SConfig::GetInstance().m_OCFactor = factor;
   Config::SetBaseOrCurrent(Config::MAIN_OVERCLOCK, factor);
+#endif
   
   [self UpdateOverclockSlider];
 }
@@ -65,9 +76,12 @@
 - (void)UpdateOverclockSlider
 {
   bool running = Core::GetState() != Core::State::Uninitialized;
+    
+#if !TARGET_OS_TV
   bool oc_slider_enabled = !running && [self.m_overclock_switch isOn];
   
   [self.m_overclock_slider setEnabled:oc_slider_enabled];
+#endif
   
   int core_clock = SystemTimers::GetTicksPerSecond() / std::pow(10, 6);
   int percent = static_cast<int>(std::round(SConfig::GetInstance().m_OCFactor * 100.f));

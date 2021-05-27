@@ -18,12 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel* m_mode_label;
 @property (weak, nonatomic) IBOutlet UILabel* m_compile_shaders_label;
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_vsync_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_fps_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_netplay_messages_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_render_time_log_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_netplay_ping_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_compile_shaders_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_vsync_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_fps_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_netplay_messages_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_render_time_log_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_netplay_ping_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_compile_shaders_switch;
 
 @end
 

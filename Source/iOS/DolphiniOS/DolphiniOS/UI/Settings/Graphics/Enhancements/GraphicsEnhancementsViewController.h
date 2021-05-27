@@ -20,14 +20,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel* m_high_bit_color_label;
 @property (weak, nonatomic) IBOutlet UILabel* m_mipmap_label;
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_scaled_efb_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_texture_filtering_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_fog_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_copy_filter_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_per_pixel_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_widescreen_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_high_bit_color_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_mipmap_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_scaled_efb_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_texture_filtering_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_fog_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_copy_filter_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_per_pixel_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_widescreen_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_high_bit_color_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_mipmap_switch;
 
 @end
 

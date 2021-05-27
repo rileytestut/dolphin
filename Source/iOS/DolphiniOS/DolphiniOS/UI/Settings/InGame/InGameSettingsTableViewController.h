@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface InGameSettingsTableViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_rotation_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_rotation_switch;
 
 @end
 

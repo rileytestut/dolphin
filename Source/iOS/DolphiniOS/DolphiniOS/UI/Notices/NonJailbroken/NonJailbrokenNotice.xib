@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder.AppleTV.XIB" version="3.0" toolsVersion="18122" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="appleTV" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,20 +17,20 @@
             </connections>
         </placeholder>
         <view contentMode="scaleToFill" id="r55-Fn-aBI">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="W3E-IV-CzC" userLabel="Header Stack">
-                    <rect key="frame" x="0.0" y="63.999999999999986" width="375" height="183.66666666666663"/>
+                    <rect key="frame" x="80" y="80" width="1760" height="240"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark_circle" translatesAutoresizingMaskIntoConstraints="NO" id="IUQ-qk-Kke">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1760" height="100"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="100" id="hmP-nM-OsB"/>
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Non-Jailbroken" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKg-MP-jJG">
-                            <rect key="frame" x="0.0" y="100" width="375" height="83.666666666666686"/>
+                            <rect key="frame" x="0.0" y="100" width="1760" height="140"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -39,13 +38,13 @@
                     </subviews>
                 </stackView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uo7-Aa-Z1e">
-                    <rect key="frame" x="0.0" y="247.66666666666666" width="375" height="445.33333333333337"/>
+                    <rect key="frame" x="80" y="320" width="1760" height="615"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="90n-Az-9Cs" userLabel="Content Stack">
-                            <rect key="frame" x="20" y="0.0" width="335" height="344.66666666666669"/>
+                            <rect key="frame" x="20" y="0.0" width="1720" height="163"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2L-KW-hUh" userLabel="Disclaimer Text">
-                                    <rect key="frame" x="0.0" y="0.0" width="335" height="142.33333333333334"/>
+                                    <rect key="frame" x="424.5" y="0.0" width="871" height="61"/>
                                     <string key="text">You are using the version of DolphiniOS for non-jailbroken devices running iOS 13.5 and higher.
 
 Performance will be 20% to 60% slower versus the jailbroken version because of restrictions put in place by Apple.</string>
@@ -54,20 +53,20 @@ Performance will be 20% to 60% slower versus the jailbroken version because of r
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you are finished with DolphiniOS, please go to Settings and press the &quot;Quit&quot; button." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPf-LS-heK" userLabel="Quit Text">
-                                    <rect key="frame" x="5.3333333333333428" y="162.33333333333334" width="324.33333333333326" height="61"/>
+                                    <rect key="frame" x="495" y="81" width="730" height="21"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPE-8Q-jMN" userLabel="Bug Text">
-                                    <rect key="frame" x="0.66666666666665719" y="243.33333333333334" width="333.66666666666674" height="81.333333333333343"/>
+                                    <rect key="frame" x="292" y="122" width="1136" height="21"/>
                                     <string key="text">Otherwise, DolphiniOS may begin crashing on launch due to a bug in iOS. If this happens, reboot your device and DolphiniOS will work again.</string>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uo-Rc-2vE">
-                                    <rect key="frame" x="47.666666666666686" y="344.66666666666674" width="240" height="0.0"/>
+                                    <rect key="frame" x="740" y="163" width="240" height="0.0"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" id="kge-k2-qnG"/>
@@ -87,16 +86,16 @@ Performance will be 20% to 60% slower versus the jailbroken version because of r
                     <viewLayoutGuide key="frameLayoutGuide" id="BUq-vD-SSA"/>
                 </scrollView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o40-Qv-36o">
-                    <rect key="frame" x="0.0" y="693" width="375" height="85"/>
+                    <rect key="frame" x="80" y="935" width="1760" height="85"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fA2-eu-kzr">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
+                            <rect key="frame" x="0.0" y="0.0" width="1760" height="85"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="np2-xh-cqO">
-                                    <rect key="frame" x="20" y="20" width="335" height="45"/>
+                                    <rect key="frame" x="20" y="20" width="1720" height="45"/>
                                     <subviews>
                                         <button opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPS-qP-47c">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1720" height="45"/>
                                             <color key="backgroundColor" systemColor="linkColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="45" id="j1f-m3-E7Q"/>

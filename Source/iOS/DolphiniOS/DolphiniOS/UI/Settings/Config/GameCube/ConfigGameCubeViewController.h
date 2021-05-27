@@ -8,7 +8,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfigGameCubeViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_skip_ipl_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_skip_ipl_switch;
 
 @end
 

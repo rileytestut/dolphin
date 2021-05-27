@@ -12,10 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic) UICommon::GameFile* m_game_file;
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_crc32_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_md5_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_sha1_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_redump_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_crc32_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_md5_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_sha1_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_redump_switch;
 
 @end
 

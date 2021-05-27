@@ -8,12 +8,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfigGeneralViewController : UITableViewController
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_dual_core_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_cheats_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_mismatched_region_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_change_discs_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_statistics_switch;
-@property (weak, nonatomic) IBOutlet UISwitch* m_crash_report_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_dual_core_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_cheats_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_mismatched_region_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_change_discs_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_statistics_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_crash_report_switch;
 
 @end
 

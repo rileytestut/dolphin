@@ -57,7 +57,7 @@
   game_ini_local.Save(ini_path);
 }
 
-- (IBAction)EnabledChanged:(UISwitch*)sender
+- (IBAction)EnabledChanged:(RSTSwitch*)sender
 {
   self->m_ar_codes[sender.tag].active = [sender isOn];
 }

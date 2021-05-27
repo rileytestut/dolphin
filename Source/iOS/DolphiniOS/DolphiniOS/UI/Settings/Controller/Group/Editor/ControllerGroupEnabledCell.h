@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic) ControllerEmu::ControlGroup* m_group;
 
-@property(weak, nonatomic) IBOutlet UISwitch* m_switch;
+@property(weak, nonatomic) IBOutlet RSTSwitch* m_switch;
 
 - (void)SetupCellWithGroup:(ControllerEmu::ControlGroup*)group;
 

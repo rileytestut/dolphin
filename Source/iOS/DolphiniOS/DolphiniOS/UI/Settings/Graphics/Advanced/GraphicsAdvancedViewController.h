@@ -21,19 +21,19 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *m_backend_multithreading_label;
 @property (weak, nonatomic) IBOutlet UILabel *m_defer_efb_label;
 
-@property (weak, nonatomic) IBOutlet UISwitch *m_wireframe_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_statistics_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_format_overlay_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_enable_api_validation_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_dump_textures_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_load_custom_textures_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_prefetch_custom_textures_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_dump_efb_target_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_disable_vram_copies_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_crop_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_progressive_scan_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_backend_multithreading_switch;
-@property (weak, nonatomic) IBOutlet UISwitch *m_defer_efb_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_wireframe_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_statistics_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_format_overlay_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_enable_api_validation_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_dump_textures_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_load_custom_textures_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_prefetch_custom_textures_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_dump_efb_target_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_disable_vram_copies_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_crop_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_progressive_scan_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_backend_multithreading_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch *m_defer_efb_switch;
 
 @end
 

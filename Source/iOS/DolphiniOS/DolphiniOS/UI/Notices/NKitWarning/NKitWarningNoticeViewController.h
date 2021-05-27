@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) id <NKitWarningNoticeDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UISwitch* m_dont_show_switch;
+@property (weak, nonatomic) IBOutlet RSTSwitch* m_dont_show_switch;
 @property (weak, nonatomic) IBOutlet UIButton* m_cancel_button;
 @property (weak, nonatomic) IBOutlet UIButton* m_continue_button;
 
