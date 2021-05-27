@@ -28,8 +28,10 @@
   // Disable auto-sleep
   [[UIApplication sharedApplication] setIdleTimerDisabled:true];
 
+#if !TARGET_OS_TV
   self.navigationItem.hidesBackButton = true;
   self.navigationController.interactivePopGestureRecognizer.enabled = false;
+#endif
   
   if (@available(iOS 13, *))
   {

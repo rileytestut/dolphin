@@ -310,7 +310,7 @@ bool SwapChain::CreateSwapChain()
                                               nullptr,
                                               transform,
                                               VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR,
-                                              m_present_mode,
+                                              (VkPresentModeKHR)m_present_mode,
                                               VK_TRUE,
                                               old_swap_chain};
   std::array<uint32_t, 2> indices = {{

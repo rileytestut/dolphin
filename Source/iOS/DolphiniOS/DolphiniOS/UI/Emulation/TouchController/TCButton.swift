@@ -8,7 +8,9 @@ import UIKit
 @IBDesignable
 class TCButton: UIButton
 {
+#if !os(tvOS)
   let hapticGenerator = UIImpactFeedbackGenerator(style: .medium)
+#endif
     
   @IBInspectable var controllerButton: Int = 0 // default: GC A button
   {
@@ -88,11 +90,13 @@ class TCButton: UIButton
       return
     }
     
+#if !os(tvOS)
     // Check UserDefaults for haptic setting
     if (UserDefaults.standard.bool(forKey: "haptic_feedback_enabled"))
     {
         hapticGenerator.impactOccurred()
     }
+#endif
     
     if (isAxis)
     {
@@ -130,10 +134,12 @@ class TCButton: UIButton
     
     MainiOS.gamepadMoveEvent(onPad: Int32(self.m_port), axis: Int32(controllerButton), value: percentage)
     
+#if !os(tvOS)
     if (self.m_last_force != force && force == maxForce)
     {
       hapticGenerator.impactOccurred()
     }
+#endif
     
     self.m_last_force = force;
   }

@@ -12,7 +12,7 @@
 #import "Core/HW/Wiimote.h"
 #import "Core/HW/WiimoteEmu/WiimoteEmu.h"
 
-#import "DolphiniOS-Swift.h"
+#import "DolphiniOS_TV-Swift.h"
 
 #import "InputCommon/ControllerEmu/ControlGroup/IMUCursor.h"
 #import "InputCommon/ControllerInterface/ControllerInterface.h"

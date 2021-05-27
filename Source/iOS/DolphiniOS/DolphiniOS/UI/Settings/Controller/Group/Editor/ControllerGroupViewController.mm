@@ -129,6 +129,8 @@
   return nil;
 }
 
+#if !TARGET_OS_TV
+
 - (UISwipeActionsConfiguration*)tableView:(UITableView*)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath*)indexPath
 {
   if (indexPath.section == SECTION_BUTTONS && ![ControllerSettingsUtils IsControllerConnectedToTouchscreen:self.m_controller])
@@ -154,6 +156,8 @@
     return nil;
   }
 }
+
+#endif
 
 - (NSIndexPath*)tableView:(UITableView*)tableView willSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {

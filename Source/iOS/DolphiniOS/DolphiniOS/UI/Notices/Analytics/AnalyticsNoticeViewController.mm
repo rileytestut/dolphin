@@ -7,7 +7,7 @@
 #import "Core/Analytics.h"
 #import "Core/ConfigManager.h"
 
-#import <FirebaseAnalytics/FirebaseAnalytics.h>
+//#import <FirebaseAnalytics/FirebaseAnalytics.h>
 
 @interface AnalyticsNoticeViewController ()
 
@@ -24,7 +24,9 @@
 {
   SConfig::GetInstance().m_analytics_permission_asked = true;
   SConfig::GetInstance().m_analytics_enabled = response;
+#if ANALYTICS
   [FIRAnalytics setAnalyticsCollectionEnabled:response];
+#endif
   [self.navigationController popViewControllerAnimated:true];
 }
 

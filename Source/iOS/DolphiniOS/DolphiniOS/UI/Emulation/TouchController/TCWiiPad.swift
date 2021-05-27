@@ -20,7 +20,9 @@ class TCWiiPad: TCView, UIGestureRecognizerDelegate
     // Register our "long press" gesture recognizer
     let pressHandler = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
     pressHandler.minimumPressDuration = 0
+    #if !os(tvOS)
     pressHandler.numberOfTouchesRequired = 1
+    #endif
     pressHandler.cancelsTouchesInView = false
     pressHandler.delegate = self
     self.real_view!.addGestureRecognizer(pressHandler)
@@ -68,10 +70,12 @@ class TCWiiPad: TCView, UIGestureRecognizerDelegate
   
   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool
   {
+    #if !os(tvOS)
     if (otherGestureRecognizer is UIScreenEdgePanGestureRecognizer)
     {
       return true
     }
+    #endif
     
     return false
   }

@@ -25,7 +25,7 @@
 #import "SoftwarePropertiesViewController.h"
 #import "SoftwareTableViewCell.h"
 
-#import "UICollectionViewLeftAlignedLayout.h"
+//#import "UICollectionViewLeftAlignedLayout.h"
 
 #import "UICommon/GameFile.h"
 
@@ -66,6 +66,8 @@
   }
   
   // Create UIRefreshControls
+    
+#if !TARGET_OS_TV
   UIRefreshControl* table_refresh = [[UIRefreshControl alloc] init];
   [table_refresh addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
   self.m_table_view.refreshControl = table_refresh;
@@ -73,6 +75,7 @@
   UIRefreshControl* collection_refresh = [[UIRefreshControl alloc] init];
   [collection_refresh addTarget:self action:@selector(handleRefresh:) forControlEvents:UIControlEventValueChanged];
   self.m_collection_view.refreshControl = collection_refresh;
+#endif
   
   // Left align on devices that aren't compact horizontally
   /*if (self.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular)
@@ -200,6 +203,8 @@
   [self.m_collection_view deselectItemAtIndexPath:indexPath animated:true];
 }
 
+#if !TARGET_OS_TV
+
 - (UIContextMenuConfiguration*)collectionView:(UICollectionView*)collectionView contextMenuConfigurationForItemAtIndexPath:(NSIndexPath*)indexPath point:(CGPoint)point API_AVAILABLE(ios(13.0))
 {
   return [UIContextMenuConfiguration configurationWithIdentifier:nil previewProvider:nil actionProvider:^(NSArray<UIMenuElement*>*)
@@ -207,6 +212,8 @@
     return [self CreateContextMenuAtIndexPath:indexPath];
   }];
 }
+
+#endif
 
 #pragma mark - Table View
 
@@ -267,6 +274,8 @@
   [self.m_table_view deselectRowAtIndexPath:indexPath animated:true];
 }
 
+#if !TARGET_OS_TV
+
 - (UIContextMenuConfiguration*)tableView:(UITableView*)tableView contextMenuConfigurationForRowAtIndexPath:(NSIndexPath*)indexPath point:(CGPoint)point API_AVAILABLE(ios(13.0))
 {
   return [UIContextMenuConfiguration configurationWithIdentifier:nil previewProvider:nil actionProvider:^(NSArray<UIMenuElement*>*)
@@ -274,6 +283,8 @@
     return [self CreateContextMenuAtIndexPath:indexPath];
   }];
 }
+
+#endif
 
 #pragma mark - Context menu
 
@@ -500,13 +511,19 @@
     @"org.dolphin-emu.ios.gamecube-software",
     @"org.dolphin-emu.ios.wii-software"
   ];
+    
+#if !TARGET_OS_TV
   
   UIDocumentPickerViewController* pickerController = [[UIDocumentPickerViewController alloc] initWithDocumentTypes:types inMode:UIDocumentPickerModeOpen];
   pickerController.delegate = self;
   pickerController.modalPresentationStyle = UIModalPresentationPageSheet;
   
   [self presentViewController:pickerController animated:true completion:nil];
+    
+#endif
 }
+
+#if !TARGET_OS_TV
 
 - (void)documentPicker:(UIDocumentPickerViewController*)controller didPickDocumentsAtURLs:(NSArray<NSURL*>*)urls
 {
@@ -526,6 +543,8 @@
     });
   }];
 }
+
+#endif
 
 #pragma mark - Menu
 

@@ -31,13 +31,13 @@
 #import "Core/PowerPC/PowerPC.h"
 #import "Core/State.h"
 
-#import "DolphiniOS-Swift.h"
+#import "DolphiniOS_TV-Swift.h"
 
 #import "DonationNoticeViewController.h"
 
 #import <Firebase/Firebase.h>
-#import <FirebaseAnalytics/FirebaseAnalytics.h>
-#import <FirebaseCrashlytics/FirebaseCrashlytics.h>
+//#import <FirebaseAnalytics/FirebaseAnalytics.h>
+//#import <FirebaseCrashlytics/FirebaseCrashlytics.h>
 
 #import "FastmemUtil.h"
 
@@ -144,7 +144,9 @@
   
   if (@available(iOS 13, *))
   {
+#if !TARGET_OS_TV
     [nav_controller setModalPresentationStyle:UIModalPresentationFormSheet];
+#endif
     nav_controller.modalInPresentation = true;
   }
   else

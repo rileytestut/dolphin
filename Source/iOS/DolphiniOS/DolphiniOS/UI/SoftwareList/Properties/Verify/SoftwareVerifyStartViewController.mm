@@ -23,8 +23,10 @@
   
   [[UIApplication sharedApplication] setIdleTimerDisabled:false];
   
+#if !TARGET_OS_TV
   self.navigationItem.hidesBackButton = false;
   self.navigationController.interactivePopGestureRecognizer.enabled = true;
+#endif
   
   if (@available(iOS 13, *))
   {

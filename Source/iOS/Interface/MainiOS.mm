@@ -249,14 +249,16 @@ void UpdateWiiPointer()
 
     // Check if GPU Family 3 is supported
     id<MTLDevice> metalDevice = MTLCreateSystemDefaultDevice();
-    if ([metalDevice supportsFeatureSet:MTLFeatureSet_iOS_GPUFamily3_v2])
-    {
+//    if ([metalDevice supportsFeatureSet:MTLFeatureSet_iOS_GPUFamily3_v2])
+//    {
+//      gfx_backend = "Vulkan";
+//    }
+//    else
+//    {
+//      gfx_backend = "OGL";
+//    }
+      
       gfx_backend = "Vulkan";
-    }
-    else
-    {
-      gfx_backend = "OGL";
-    }
 
     dolphin_config.GetOrCreateSection("Core")->Set("GFXBackend", gfx_backend);
 

@@ -19,10 +19,12 @@
   [super viewDidLoad];
   
   // Create a UIRefreshControl
+#if !TARGET_OS_TV
   UIRefreshControl* refreshControl = [[UIRefreshControl alloc] init];
   [refreshControl addTarget:self action:@selector(RefreshDevices) forControlEvents:UIControlEventValueChanged];
   
   self.tableView.refreshControl = refreshControl;
+#endif
   
   [self RefreshDevices];
 }
@@ -75,7 +77,10 @@
   }
   
   [self.tableView reloadData];
+    
+#if !TARGET_OS_TV
   [self.tableView.refreshControl endRefreshing];
+#endif
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

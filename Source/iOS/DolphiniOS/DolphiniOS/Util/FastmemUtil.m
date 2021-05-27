@@ -9,6 +9,16 @@
 static bool s_can_enable_fastmem = false;
 static DOLFastmemType s_fastmem_type;
 
+extern
+kern_return_t thread_set_exception_ports
+(
+    thread_act_t thread,
+    exception_mask_t exception_mask,
+    mach_port_t new_port,
+    exception_behavior_t behavior,
+    thread_state_flavor_t new_flavor
+);
+
 bool CanAllocateVirtualMemory(size_t memory_size)
 {
   vm_address_t addr = 0;

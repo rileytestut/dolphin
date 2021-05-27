@@ -38,6 +38,30 @@
 #endif
 #endif
 
+extern "C"
+kern_return_t rst_thread_set_exception_ports
+(
+    thread_act_t thread,
+    exception_mask_t exception_mask,
+    mach_port_t new_port,
+    exception_behavior_t behavior,
+    thread_state_flavor_t new_flavor
+);
+
+extern "C"
+mach_msg_return_t rst_mach_msg_overwrite
+ (
+    mach_msg_header_t *msg,
+    mach_msg_option_t option,
+    mach_msg_size_t send_size,
+    mach_msg_size_t rcv_size,
+    mach_port_name_t rcv_name,
+    mach_msg_timeout_t timeout,
+    mach_port_name_t notify,
+    mach_msg_header_t *rcv_msg,
+    mach_msg_size_t rcv_limit
+);
+
 namespace EMM
 {
 #ifdef _WIN32
@@ -160,8 +184,11 @@ static void ExceptionThread(mach_port_t port)
     // a message: either a mach_exception_raise_state RPC due to
     // thread_set_exception_ports, or MACH_NOTIFY_NO_SENDERS due to
     // mach_port_request_notification.
-    CheckKR("mach_msg_overwrite",
-            mach_msg_overwrite(send_msg, option, send_size, sizeof(msg_in), port,
+    
+      void *functionAddress = (void *)&rst_mach_msg_overwrite;
+      
+      CheckKR("mach_msg_overwrite",
+            rst_mach_msg_overwrite(send_msg, option, send_size, sizeof(msg_in), port,
                                MACH_MSG_TIMEOUT_NONE, MACH_PORT_NULL, &msg_in.Head, 0));
 
     if (msg_in.Head.msgh_id == MACH_NOTIFY_NO_SENDERS)
@@ -228,9 +255,14 @@ void InstallExceptionHandler()
           mach_port_insert_right(mach_task_self(), port, port, MACH_MSG_TYPE_MAKE_SEND));
   // Mach tries the following exception ports in order: thread, task, host.
   // Debuggers set the task port, so we grab the thread port.
+    
+    
   CheckKR("thread_set_exception_ports",
-          thread_set_exception_ports(mach_thread_self(), EXC_MASK_BAD_ACCESS, port,
+          rst_thread_set_exception_ports(mach_thread_self(), EXC_MASK_BAD_ACCESS, port,
                                      EXCEPTION_STATE | MACH_EXCEPTION_CODES, THREAD_STATE64));
+     
+     
+    
   // ...and get rid of our copy so that MACH_NOTIFY_NO_SENDERS works.
   CheckKR("mach_port_mod_refs",
           mach_port_mod_refs(mach_task_self(), port, MACH_PORT_RIGHT_SEND, -1));

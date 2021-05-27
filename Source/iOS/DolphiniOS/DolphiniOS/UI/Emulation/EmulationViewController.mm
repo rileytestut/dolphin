@@ -138,7 +138,9 @@
   ];
   
   // Update status bar appearance so it's the proper color if "Show Status Bar" is enabled
+#if !TARGET_OS_TV
   [self setNeedsStatusBarAppearanceUpdate];
+#endif
 }
 
 
@@ -265,7 +267,9 @@
   
   [[NSNotificationCenter defaultCenter] postNotificationName:@"me.oatmealdome.DolphiniOS.emulation_stop" object:self];
   
+#if ANALYTICS
   [[FIRCrashlytics crashlytics] setCustomValue:@"none" forKey:@"current-game"];
+#endif
   
 #ifdef NONJAILBROKEN
   if (HasJitWithPTrace())
@@ -388,7 +392,9 @@
     [[NSUserDefaults standardUserDefaults] setObject:mutable_games_array forKey:@"unique_games"];
   }
   
+#if ANALYTICS
   [[FIRCrashlytics crashlytics] setCustomValue:uid forKey:@"current-game"];
+#endif
   
   dispatch_async(dispatch_get_main_queue(), ^{
     [self PopulatePortDictionary];
@@ -449,7 +455,10 @@
 - (void)UpdateNavigationBar:(bool)hidden
 {
   [self.navigationController setNavigationBarHidden:hidden animated:true];
+    
+#if !TARGET_OS_TV
   [self setNeedsStatusBarAppearanceUpdate];
+#endif
   
   // Adjust the safe area insets
   UIEdgeInsets insets = self.additionalSafeAreaInsets;
@@ -646,9 +655,14 @@
   }
   
   [self.navigationController setNavigationBarHidden:self.m_pull_down_mode != DOLTopBarPullDownModeAlwaysVisible animated:true];
+#if !TARGET_OS_TV
   [self.m_edge_pan_recognizer setEnabled:self.m_pull_down_mode == DOLTopBarPullDownModeSwipe];
+#endif
   [self.m_pull_down_button setHidden:self.m_pull_down_mode != DOLTopBarPullDownModeButton];
+    
+#if !TARGET_OS_TV
   [self setNeedsUpdateOfScreenEdgesDeferringSystemGestures];
+#endif
 }
 
 - (void)ChangeVisibleTouchControllerToPort:(int)port

@@ -2,17 +2,24 @@
 // Licensed under GPLv2+
 // Refer to the license.txt file included.
 
+#if !os(tvOS)
 import CoreMotion
+#endif
+
 import Foundation
 
 @objc public class TCDeviceMotion: NSObject
 {
   @objc public static let shared = TCDeviceMotion()
   
+#if !os(tvOS)
   private let motion_manager = CMMotionManager()
+#endif
   
   private var is_motion_enabled = false
+#if !os(tvOS)
   private var orientation: UIInterfaceOrientation = .portrait
+#endif
   private var motion_mode = 0
   private var m_port = 0
   
@@ -40,6 +47,9 @@ import Foundation
     // Set the sensor update times
     // 200Hz is the Wiimote update interval
     let update_interval: Double = 1.0 / 200.0
+    
+#if !os(tvOS)
+    
     self.motion_manager.accelerometerUpdateInterval = update_interval
     self.motion_manager.gyroUpdateInterval = update_interval
     
@@ -125,6 +135,8 @@ import Foundation
       MainiOS.gamepadMoveEvent(onPad: Int32(self.m_port), axis: Int32(TCButtonType.WIIMOTE_GYRO_YAW_LEFT.rawValue), value: CGFloat(z))
       MainiOS.gamepadMoveEvent(onPad: Int32(self.m_port), axis: Int32(TCButtonType.WIIMOTE_GYRO_YAW_RIGHT.rawValue), value: CGFloat(z))
     }
+
+#endif
     
     self.is_motion_enabled = true
   }
@@ -136,8 +148,12 @@ import Foundation
       return
     }
     
+#if !os(tvOS)
+    
     self.motion_manager.stopAccelerometerUpdates()
     self.motion_manager.stopGyroUpdates()
+
+#endif
     
     self.is_motion_enabled = false
   }
@@ -170,7 +186,9 @@ import Foundation
   // UIApplicationDidChangeStatusBarOrientationNotification is deprecated...
   @objc func statusBarOrientationChanged()
   {
+#if !os(tvOS)
     self.orientation = UIApplication.shared.statusBarOrientation
+#endif
   }
   
 }

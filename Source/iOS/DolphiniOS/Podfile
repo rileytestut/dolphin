@@ -1,7 +1,12 @@
-platform :ios, '12.0'
+platform :tvos, '12.0'
 
 target 'DolphiniOS' do
     pod 'Firebase/Analytics'
     pod 'Firebase/Crashlytics'
-    pod 'UICollectionViewLeftAlignedLayout'
+    #pod 'UICollectionViewLeftAlignedLayout'
+end
+
+target 'DolphiniOS-TV' do
+    pod 'Firebase'
+    #pod 'UICollectionViewLeftAlignedLayout'
 end

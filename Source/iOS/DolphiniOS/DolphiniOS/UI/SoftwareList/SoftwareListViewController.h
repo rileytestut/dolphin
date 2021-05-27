@@ -17,7 +17,11 @@ typedef NS_ENUM(NSUInteger, DOLBootType)
   DOLBootTypeGCIPL
 };
 
+#if !TARGET_OS_TV
 @interface SoftwareListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UIDocumentPickerDelegate>
+#else
+@interface SoftwareListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+#endif
 
 @property(nonatomic) UICommon::GameFileCache* m_cache;
 @property(nonatomic) bool m_cache_loaded;

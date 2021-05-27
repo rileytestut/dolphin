@@ -8,7 +8,9 @@ import UIKit
 @IBDesignable
 class TCDirectionalPad: UIView
 {
+#if !os(tvOS)
   let hapticGenerator = UIImpactFeedbackGenerator(style: .medium)
+#endif
 
   var dpadNoPressed: UIImage? = nil
   var dpadOnePressed: UIImage? = nil
@@ -87,7 +89,9 @@ class TCDirectionalPad: UIView
       // Check UserDefaults for haptic setting
       if (!self.m_has_pressed && UserDefaults.standard.bool(forKey: "haptic_feedback_enabled"))
       {
+#if !os(tvOS)
         hapticGenerator.impactOccurred()
+#endif
         self.m_has_pressed = true
       }
       

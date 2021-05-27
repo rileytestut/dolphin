@@ -4,7 +4,7 @@
 
 #import "InvalidCpuCoreNoticeViewController.h"
 
-#import <FirebaseAnalytics/FirebaseAnalytics.h>
+//#import <FirebaseAnalytics/FirebaseAnalytics.h>
 
 @interface InvalidCpuCoreNoticeViewController ()
 

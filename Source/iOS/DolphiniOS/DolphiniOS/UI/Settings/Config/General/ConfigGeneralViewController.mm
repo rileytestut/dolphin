@@ -9,8 +9,9 @@
 #import "Core/ConfigManager.h"
 #import "Core/Core.h"
 
-#import <FirebaseAnalytics/FirebaseAnalytics.h>
-#import <FirebaseCrashlytics/FirebaseCrashlytics.h>
+#import <Firebase/Firebase.h>
+//#import <FirebaseAnalytics/FirebaseAnalytics.h>
+//#import <FirebaseCrashlytics/FirebaseCrashlytics.h>
 
 @interface ConfigGeneralViewController ()
 
@@ -85,7 +86,10 @@
 - (IBAction)CrashReportingChanged:(id)sender
 {
   [[NSUserDefaults standardUserDefaults] setBool:[self.m_crash_report_switch isOn] forKey:@"crash_reporting_enabled"];
+    
+#if ANALYTICS
   [[FIRCrashlytics crashlytics] setCrashlyticsCollectionEnabled:[self.m_crash_report_switch isOn]];
+#endif
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
@@ -94,7 +98,11 @@
   {
     DolphinAnalytics::Instance().GenerateNewIdentity();
     DolphinAnalytics::Instance().ReloadConfig();
+      
+#if ANALYTICS
     [FIRAnalytics resetAnalyticsData];
+#endif
+      
     [[NSUserDefaults standardUserDefaults] setObject:[[NSArray alloc] init] forKey:@"unique_games"];
     
     UIAlertController* alert_controller = [UIAlertController alertControllerWithTitle:DOLocalizedString(@"Identity Generation") message:DOLocalizedString(@"New identity generated.") preferredStyle:UIAlertControllerStyleAlert];

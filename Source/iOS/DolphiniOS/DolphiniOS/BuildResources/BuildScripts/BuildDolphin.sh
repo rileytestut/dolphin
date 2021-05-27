@@ -6,9 +6,15 @@ ROOT_DOLPHIN_DIR=$PROJECT_DIR/../../..
 CMAKE_BUILD_DIR=$ROOT_DOLPHIN_DIR/build-$PLATFORM_NAME-$DOLPHIN_BUILD_TYPE
 ADDITIONAL_CMAKE_SETTINGS=
 
-IOS_PLATFORM=OS64
+#IOS_PLATFORM=OS64
+IOS_PLATFORM=TVOS
+
 if [ $PLATFORM_NAME == "iphonesimulator" ]; then
     IOS_PLATFORM=SIMULATOR64
+fi
+
+if [ $PLATFORM_NAME == "appletvsimulator" ]; then
+    IOS_PLATFORM=SIMULATOR_TVOS
 fi
 
 if [ $BUILD_FOR_JAILBROKEN_DEVICE == "YES" ]; then
@@ -46,4 +52,4 @@ if [ -f "$CMAKE_BUILD_DIR/libs/Externals/libfmtd.a" ]; then
 fi
 
 rm $PROJECT_DIR/libMoltenVK.dylib || true
-ln -s $ROOT_DOLPHIN_DIR/Externals/MoltenVK/libvulkan_iOS.dylib $PROJECT_DIR/libMoltenVK.dylib
+ln -s $ROOT_DOLPHIN_DIR/Externals/MoltenVK/dylib/tvOS/libMoltenVK.dylib $PROJECT_DIR/libMoltenVK.dylib
