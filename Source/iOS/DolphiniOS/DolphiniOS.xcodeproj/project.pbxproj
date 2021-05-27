@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -340,20 +340,6 @@
 		BF43384E264F2608007B7B5A /* MemoryShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF43384D264F2608007B7B5A /* MemoryShim.swift */; };
 		BF433857264F31F2007B7B5A /* libMoltenVK.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = BF719839264DC54000DDFD50 /* libMoltenVK.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		BF719843264DC7DF00DDFD50 /* AssetsTV.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF719842264DC7DF00DDFD50 /* AssetsTV.xcassets */; };
-		BF7B9C3626548703001A81C1 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C2A265486A7001A81C1 /* ServerManager.swift */; };
-		BF7B9C3726548703001A81C1 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C2B265486B0001A81C1 /* Connection.swift */; };
-		BF7B9C3826548703001A81C1 /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C2C265486B8001A81C1 /* NetworkConnection.swift */; };
-		BF7B9C3926548703001A81C1 /* ALTServerError+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C2E265486C9001A81C1 /* ALTServerError+Conveniences.swift */; };
-		BF7B9C3A26548703001A81C1 /* Result+Conveniences.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C30265486D8001A81C1 /* Result+Conveniences.swift */; };
-		BF7B9C3B26548703001A81C1 /* ServerConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C31265486E0001A81C1 /* ServerConnection.swift */; };
-		BF7B9C3C26548703001A81C1 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C32265486E8001A81C1 /* Server.swift */; };
-		BF7B9C3D26548703001A81C1 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C33265486F1001A81C1 /* ServerProtocol.swift */; };
-		BF7B9C3E26548703001A81C1 /* NSError+ALTServerError.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C34265486FA001A81C1 /* NSError+ALTServerError.m */; };
-		BF7B9C3F26548703001A81C1 /* CodableServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C3526548702001A81C1 /* CodableServerError.swift */; };
-		BF7B9C4226548730001A81C1 /* DeltaCore in Frameworks */ = {isa = PBXBuildFile; productRef = BF7B9C4126548730001A81C1 /* DeltaCore */; };
-		BF7B9C4526548791001A81C1 /* SwiftShim.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C4326548760001A81C1 /* SwiftShim.swift */; };
-		BF7B9C4B26548871001A81C1 /* GameCubeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7B9C4926548869001A81C1 /* GameCubeController.swift */; };
-		BF7B9C4C26548871001A81C1 /* GameCubeController.deltamapping in Resources */ = {isa = PBXBuildFile; fileRef = BF7B9C4A26548871001A81C1 /* GameCubeController.deltamapping */; };
 		BF93B0BB264CCC0D004EBAEA /* LaunchScreenTV.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF93B0BA264CCC0D004EBAEA /* LaunchScreenTV.storyboard */; };
 		BF93B0BC264CCC12004EBAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B945A3812362909500B21680 /* LaunchScreen.storyboard */; };
 		BF976ACF264CD82600162DD9 /* SoftwareProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E4EA7624E07AE700CED657 /* SoftwareProperties.storyboard */; };
@@ -378,7 +364,6 @@
 		BF976AE6264CE74000162DD9 /* ImproperlySignedNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9C956232461007C0095EC98 /* ImproperlySignedNotice.xib */; };
 		BF976AE7264CE74300162DD9 /* DonationNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9B536D423DE609900F03106 /* DonationNotice.xib */; };
 		BF976AE8264CE74500162DD9 /* AnalyticsNotice.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98911A02444F12200A24522 /* AnalyticsNotice.xib */; };
-		BFC2690226559F1F00000169 /* AltController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BFC268FF2655955500000169 /* AltController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -864,18 +849,6 @@
 		BF719839264DC54000DDFD50 /* libMoltenVK.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMoltenVK.dylib; path = ../../../Externals/MoltenVK/dylib/tvOS/libMoltenVK.dylib; sourceTree = "<group>"; };
 		BF71983D264DC5AF00DDFD50 /* MoltenVK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = MoltenVK.xcframework; path = ../../../../Externals/MoltenVK/MoltenVK.xcframework; sourceTree = "<group>"; };
 		BF719842264DC7DF00DDFD50 /* AssetsTV.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AssetsTV.xcassets; sourceTree = "<group>"; };
-		BF7B9C2A265486A7001A81C1 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerManager.swift; path = "DolphiniOS/New Group/ServerManager.swift"; sourceTree = SOURCE_ROOT; };
-		BF7B9C2B265486B0001A81C1 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
-		BF7B9C2C265486B8001A81C1 /* NetworkConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
-		BF7B9C2D265486C1001A81C1 /* NSError+ALTServerError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+ALTServerError.h"; sourceTree = "<group>"; };
-		BF7B9C2E265486C9001A81C1 /* ALTServerError+Conveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ALTServerError+Conveniences.swift"; sourceTree = "<group>"; };
-		BF7B9C2F265486D1001A81C1 /* ALTConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTConnection.h; sourceTree = "<group>"; };
-		BF7B9C30265486D8001A81C1 /* Result+Conveniences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Result+Conveniences.swift"; sourceTree = "<group>"; };
-		BF7B9C31265486E0001A81C1 /* ServerConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerConnection.swift; sourceTree = "<group>"; };
-		BF7B9C32265486E8001A81C1 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		BF7B9C33265486F1001A81C1 /* ServerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
-		BF7B9C34265486FA001A81C1 /* NSError+ALTServerError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+ALTServerError.m"; sourceTree = "<group>"; };
-		BF7B9C3526548702001A81C1 /* CodableServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableServerError.swift; sourceTree = "<group>"; };
 		BF7B9C4326548760001A81C1 /* SwiftShim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftShim.swift; sourceTree = "<group>"; };
 		BF7B9C4926548869001A81C1 /* GameCubeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCubeController.swift; sourceTree = "<group>"; };
 		BF7B9C4A26548871001A81C1 /* GameCubeController.deltamapping */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = GameCubeController.deltamapping; path = ../../../../../../Delta/Delta/GameCube/GameCubeController.deltamapping; sourceTree = "<group>"; };
@@ -933,7 +906,6 @@
 				BF0E5DFF264C74B1008EF0AA /* Metal.framework in Frameworks */,
 				BF0E5E00264C74B1008EF0AA /* MetalKit.framework in Frameworks */,
 				BF0E5E01264C74B1008EF0AA /* OpenGLES.framework in Frameworks */,
-				BF7B9C4226548730001A81C1 /* DeltaCore in Frameworks */,
 				BF0E5E02264C74B1008EF0AA /* libbz2.tbd in Frameworks */,
 				BF0E5E03264C74B1008EF0AA /* liblzma.tbd in Frameworks */,
 				BF0E5E04264C74B1008EF0AA /* libz.tbd in Frameworks */,
@@ -1121,7 +1093,6 @@
 				B99B05A923A09CDC0076C7D8 /* Build Resources */,
 				B91BF364236B3DFF00199BA7 /* UI */,
 				B98963C92553E362007CCA0D /* Util */,
-				BF7B9C2926548690001A81C1 /* AltKit */,
 				BF7B9C482654885A001A81C1 /* GameCube */,
 				B945A3732362908500B21680 /* AppDelegate.h */,
 				B945A3742362908500B21680 /* AppDelegate.mm */,
@@ -1833,25 +1804,6 @@
 			path = DolphinVK;
 			sourceTree = "<group>";
 		};
-		BF7B9C2926548690001A81C1 /* AltKit */ = {
-			isa = PBXGroup;
-			children = (
-				BF7B9C2F265486D1001A81C1 /* ALTConnection.h */,
-				BF7B9C2E265486C9001A81C1 /* ALTServerError+Conveniences.swift */,
-				BF7B9C3526548702001A81C1 /* CodableServerError.swift */,
-				BF7B9C2B265486B0001A81C1 /* Connection.swift */,
-				BF7B9C2C265486B8001A81C1 /* NetworkConnection.swift */,
-				BF7B9C2D265486C1001A81C1 /* NSError+ALTServerError.h */,
-				BF7B9C34265486FA001A81C1 /* NSError+ALTServerError.m */,
-				BF7B9C30265486D8001A81C1 /* Result+Conveniences.swift */,
-				BF7B9C32265486E8001A81C1 /* Server.swift */,
-				BF7B9C31265486E0001A81C1 /* ServerConnection.swift */,
-				BF7B9C2A265486A7001A81C1 /* ServerManager.swift */,
-				BF7B9C33265486F1001A81C1 /* ServerProtocol.swift */,
-			);
-			path = AltKit;
-			sourceTree = "<group>";
-		};
 		BF7B9C482654885A001A81C1 /* GameCube */ = {
 			isa = PBXGroup;
 			children = (
@@ -1930,7 +1882,6 @@
 			);
 			name = "DolphiniOS-TV";
 			packageProductDependencies = (
-				BF7B9C4126548730001A81C1 /* DeltaCore */,
 			);
 			productName = DolphiniOS;
 			productReference = BF0E5E45264C74B1008EF0AA /* DolphiniOS-TV.app */;
@@ -1972,7 +1923,6 @@
 			);
 			mainGroup = B945A3672362908400B21680;
 			packageReferences = (
-				BF7B9C4026548730001A81C1 /* XCRemoteSwiftPackageReference "DeltaCore" */,
 			);
 			productRefGroup = B945A3712362908500B21680 /* Products */;
 			projectDirPath = "";
@@ -2044,7 +1994,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF7B9C4C26548871001A81C1 /* GameCubeController.deltamapping in Resources */,
 				BF0E5E0A264C74B1008EF0AA /* license.txt in Resources */,
 				BF0E5E0D264C74B1008EF0AA /* SpecialThanks.txt in Resources */,
 				BF719843264DC7DF00DDFD50 /* AssetsTV.xcassets in Resources */,
@@ -2529,20 +2478,17 @@
 			files = (
 				BF0E5D86264C74B1008EF0AA /* ControllerLoadProfileViewController.mm in Sources */,
 				BF0E5D87264C74B1008EF0AA /* GraphicsBackendViewController.mm in Sources */,
-				BF7B9C3C26548703001A81C1 /* Server.swift in Sources */,
 				BF0E5D88264C74B1008EF0AA /* GraphicsHacksViewController.mm in Sources */,
 				BF0E5D89264C74B1008EF0AA /* EmulationViewController.mm in Sources */,
 				BF0E5D8A264C74B1008EF0AA /* SoftwareVerifyResultsProblemCell.m in Sources */,
 				BF0E5D8B264C74B1008EF0AA /* SoftwareVerifyProblem.mm in Sources */,
 				BF0E5D8C264C74B1008EF0AA /* ControllerSettingsUtils.mm in Sources */,
-				BF7B9C4526548791001A81C1 /* SwiftShim.swift in Sources */,
 				BF0E5D8D264C74B1008EF0AA /* AspectRatioViewController.mm in Sources */,
 				BF0E5D8E264C74B1008EF0AA /* TCClassicWiiPad.swift in Sources */,
 				BF0E5D8F264C74B1008EF0AA /* InGameSettingsViewController.mm in Sources */,
 				BF0E5D90264C74B1008EF0AA /* ConfigGeneralViewController.mm in Sources */,
 				BF0E5D91264C74B1008EF0AA /* SoftwareVerifyComputeViewController.mm in Sources */,
 				BF0E5D92264C74B1008EF0AA /* NetPlayHolder.mm in Sources */,
-				BF7B9C3926548703001A81C1 /* ALTServerError+Conveniences.swift in Sources */,
 				BF0E5D93264C74B1008EF0AA /* SoftwareInfoViewController.mm in Sources */,
 				BF0E5D94264C74B1008EF0AA /* PortSelectorCell.m in Sources */,
 				BF0E5D95264C74B1008EF0AA /* SettingsTableViewController.mm in Sources */,
@@ -2556,7 +2502,6 @@
 				BF0E5D9D264C74B1008EF0AA /* ConfigAdvancedViewController.mm in Sources */,
 				BF0E5D9E264C74B1008EF0AA /* CpuEmulationEngineViewController.mm in Sources */,
 				BF0E5D9F264C74B1008EF0AA /* LocalizerUtils.m in Sources */,
-				BF7B9C3D26548703001A81C1 /* ServerProtocol.swift in Sources */,
 				BF0E5DA0264C74B1008EF0AA /* SpeedCell.m in Sources */,
 				BF0E5DA1264C74B1008EF0AA /* ControllerDetailsViewController.mm in Sources */,
 				BF0E5DA2264C74B1008EF0AA /* main.m in Sources */,
@@ -2577,7 +2522,6 @@
 				BF0E5DB1264C74B1008EF0AA /* SoftwareListViewController.mm in Sources */,
 				BF0E5DB2264C74B1008EF0AA /* ControllerGroupCheckboxCell.mm in Sources */,
 				BF0E5DB3264C74B1008EF0AA /* SoftwareGeckoViewController.mm in Sources */,
-				BF7B9C3F26548703001A81C1 /* CodableServerError.swift in Sources */,
 				BF0E5DB4264C74B1008EF0AA /* ReloadStateNoticeViewController.mm in Sources */,
 				BF0E5DB5264C74B1008EF0AA /* TopBarModeViewController.m in Sources */,
 				BF0E5DB6264C74B1008EF0AA /* UpdateNoticeViewController.mm in Sources */,
@@ -2586,21 +2530,17 @@
 				BF0E5DB9264C74B1008EF0AA /* ControllerGroupEnabledCell.mm in Sources */,
 				BF0E5DBA264C74B1008EF0AA /* GraphicsRootViewController.mm in Sources */,
 				BF0E5F1A264C9B50008EF0AA /* RSTComponents.m in Sources */,
-				BFC2690226559F1F00000169 /* AltController.mm in Sources */,
 				BF0E5DBB264C74B1008EF0AA /* UnofficialBuildNoticeViewController.m in Sources */,
 				BF0E5DBC264C74B1008EF0AA /* LoadStateViewController.mm in Sources */,
-				BF7B9C3626548703001A81C1 /* ServerManager.swift in Sources */,
 				BF0E5DBD264C74B1008EF0AA /* TCGameCubePad.swift in Sources */,
 				BF0E5DBE264C74B1008EF0AA /* SoftwareCollectionViewCell.m in Sources */,
 				BF0E5DBF264C74B1008EF0AA /* WiiSensorBarViewController.mm in Sources */,
 				BF0E5DC0264C74B1008EF0AA /* InGamePortSelectorViewController.mm in Sources */,
 				BF0E5DC1264C74B1008EF0AA /* SoftwareActionReplayEditViewController.mm in Sources */,
-				BF7B9C3726548703001A81C1 /* Connection.swift in Sources */,
 				BF0E5DC2264C74B1008EF0AA /* SoftwareActionReplayCodeCell.m in Sources */,
 				BF0E5DC3264C74B1008EF0AA /* StateCell.m in Sources */,
 				BF0E5DC4264C74B1008EF0AA /* ConfigInterfaceViewController.mm in Sources */,
 				BF0E5DC5264C74B1008EF0AA /* InGameSettingsTableViewController.mm in Sources */,
-				BF7B9C3A26548703001A81C1 /* Result+Conveniences.swift in Sources */,
 				BF0E5DC6264C74B1008EF0AA /* NKitWarningNoticeViewController.mm in Sources */,
 				BF0E5DC7264C74B1008EF0AA /* InternalResolutionViewController.mm in Sources */,
 				BF0E5DC8264C74B1008EF0AA /* AnalyticsNoticeViewController.mm in Sources */,
@@ -2611,7 +2551,6 @@
 				BF0E5DCD264C74B1008EF0AA /* AntiAliasingCell.m in Sources */,
 				BF0E5DCE264C74B1008EF0AA /* EAGLView.m in Sources */,
 				BF0E5DCF264C74B1008EF0AA /* MainTabBarController.m in Sources */,
-				BF7B9C3E26548703001A81C1 /* NSError+ALTServerError.m in Sources */,
 				BF0E5DD0264C74B1008EF0AA /* TCSidewaysWiiPad.swift in Sources */,
 				BF0E5DD1264C74B1008EF0AA /* ControllerGroupViewController.mm in Sources */,
 				BF0E5DD2264C74B1008EF0AA /* GraphicsGeneralViewController.mm in Sources */,
@@ -2627,7 +2566,6 @@
 				BF0E5DDC264C74B1008EF0AA /* InGameChangeDiscViewController.mm in Sources */,
 				BF0E5DDD264C74B1008EF0AA /* ConfigWiiViewController.mm in Sources */,
 				BF0E5DDE264C74B1008EF0AA /* SoftwareGeckoEditViewController.mm in Sources */,
-				BF7B9C3826548703001A81C1 /* NetworkConnection.swift in Sources */,
 				BF0E5DDF264C74B1008EF0AA /* TCDeviceMotion.swift in Sources */,
 				BF0E5DE0264C74B1008EF0AA /* SettingsDebugViewController.mm in Sources */,
 				BF0E5DE1264C74B1008EF0AA /* WiiLanguageViewController.mm in Sources */,
@@ -2635,7 +2573,6 @@
 				BF0E5DE3264C74B1008EF0AA /* InvalidCpuCoreNoticeViewController.mm in Sources */,
 				BF0E5DE4264C74B1008EF0AA /* SoftwarePatchesViewController.mm in Sources */,
 				BF0E5DE5264C74B1008EF0AA /* DonationNoticeViewController.m in Sources */,
-				BF7B9C4B26548871001A81C1 /* GameCubeController.swift in Sources */,
 				BF0E5DE6264C74B1008EF0AA /* TCButton.swift in Sources */,
 				BF0E5DE7264C74B1008EF0AA /* ControllerGroupButtonCell.mm in Sources */,
 				BF0E5DE8264C74B1008EF0AA /* TCWiiPad.swift in Sources */,
@@ -2652,7 +2589,6 @@
 				BF43384E264F2608007B7B5A /* MemoryShim.swift in Sources */,
 				BF0E5DF4264C74B1008EF0AA /* ControllerDsuClientViewController.mm in Sources */,
 				BF0E5DF5264C74B1008EF0AA /* TCJoystick.swift in Sources */,
-				BF7B9C3B26548703001A81C1 /* ServerConnection.swift in Sources */,
 				BF0E5DF6264C74B1008EF0AA /* CodeSignatureUtils.m in Sources */,
 				BF0E5DF7264C74B1008EF0AA /* ControllerTouchscreenSettingsViewController.mm in Sources */,
 				BF0E5DF8264C74B1008EF0AA /* NonJailbrokenNoticeViewController.m in Sources */,
@@ -4269,25 +4205,6 @@
 			defaultConfigurationName = "Release (Jailbroken)";
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		BF7B9C4026548730001A81C1 /* XCRemoteSwiftPackageReference "DeltaCore" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rileytestut/DeltaCore.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		BF7B9C4126548730001A81C1 /* DeltaCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = BF7B9C4026548730001A81C1 /* XCRemoteSwiftPackageReference "DeltaCore" */;
-			productName = DeltaCore;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B945A3682362908400B21680 /* Project object */;
 }
