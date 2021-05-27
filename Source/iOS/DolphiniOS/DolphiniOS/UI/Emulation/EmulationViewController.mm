@@ -17,6 +17,7 @@
 
 #import "Core/ConfigManager.h"
 #import "Core/Config/MainSettings.h"
+#import "Core/Config/GraphicsSettings.h"
 #import "Core/Core.h"
 #import "Core/HW/GCPad.h"
 #import "Core/HW/Wiimote.h"
@@ -26,8 +27,9 @@
 #import "Core/HW/SI/SI_Device.h"
 #import "Core/State.h"
 
-#import <FirebaseAnalytics/FirebaseAnalytics.h>
-#import <FirebaseCrashlytics/FirebaseCrashlytics.h>
+#import <Firebase/Firebase.h>
+//#import <FirebaseAnalytics/FirebaseAnalytics.h>
+//#import <FirebaseCrashlytics/FirebaseCrashlytics.h>
 
 #import "GameFileCacheHolder.h"
 
@@ -40,6 +42,7 @@
 #import <mach/mach.h>
 
 #import "MainiOS.h"
+#import "DolphiniOS_TV-Swift.h"
 
 #import "NKitWarningNoticeViewController.h"
 
@@ -57,6 +60,8 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+    
+    Config::SetBaseOrCurrent(Config::GFX_SHOW_FPS, YES);
   
   // Setup renderer view
   if (Config::Get(Config::MAIN_GFX_BACKEND) == "Vulkan")
@@ -72,7 +77,7 @@
   
   self.m_ts_active_port = -1;
   
-  self.m_pull_down_mode = (DOLTopBarPullDownMode)[[NSUserDefaults standardUserDefaults] integerForKey:@"top_bar_pull_down_mode"];
+    self.m_pull_down_mode = DOLTopBarPullDownModeButton;//(DOLTopBarPullDownMode)[[NSUserDefaults standardUserDefaults] integerForKey:@"top_bar_pull_down_mode"];
   
   if (self.m_pull_down_mode != DOLTopBarPullDownModeAlwaysHidden && self.m_pull_down_mode != DOLTopBarPullDownModeAlwaysVisible)
   {
@@ -156,20 +161,30 @@
     {
       if (std::get<BootParameters::Disc>(self->m_boot_parameters->parameters).volume->IsNKit())
       {
-        if (!Config::GetBase(Config::MAIN_SKIP_NKIT_WARNING))
-        {
-          NKitWarningNoticeViewController* controller = [[NKitWarningNoticeViewController alloc] initWithNibName:@"NKitWarningNotice" bundle:nil];
-          controller.delegate = self;
-          
-          [self presentViewController:controller animated:true completion:nil];
-          
-          return;
-        }
+//        if (!Config::GetBase(Config::MAIN_SKIP_NKIT_WARNING))
+//        {
+//          NKitWarningNoticeViewController* controller = [[NKitWarningNoticeViewController alloc] initWithNibName:@"NKitWarningNotice" bundle:nil];
+//          controller.delegate = self;
+//          
+//          [self presentViewController:controller animated:true completion:nil];
+//          
+//          return;
+//        }
       }
     }
     
     [NSThread detachNewThreadSelector:@selector(StartEmulation) toTarget:self withObject:nil];
   }
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    if ([UIApplication.sharedApplication applicationState] != UIApplicationStateBackground)
+    {
+        [MainiOS stopEmulation];
+    }
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

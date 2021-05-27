@@ -103,16 +103,16 @@
     }
   }
 #endif
-  
-  if (!HasJit())
-  {
-    // Show the incompatibilty warning
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = [[JitAcquisitionFailureNoticeViewController alloc] initWithNibName:@"JitAcquisitionFailureNotice" bundle:nil];
-    [self.window makeKeyAndVisible];
     
-    return true;
-  }
+//  if (!HasJit())
+//  {
+//    // Show the incompatibilty warning
+//    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+//    self.window.rootViewController = [[JitAcquisitionFailureNoticeViewController alloc] initWithNibName:@"JitAcquisitionFailureNotice" bundle:nil];
+//    [self.window makeKeyAndVisible];
+//
+//    return true;
+//  }
   
   if ([[NSUserDefaults standardUserDefaults] boolForKey:@"is_killed"])
   {

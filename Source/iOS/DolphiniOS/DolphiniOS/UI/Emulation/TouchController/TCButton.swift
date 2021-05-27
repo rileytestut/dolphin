@@ -110,13 +110,15 @@ class TCButton: UIButton
   
   @objc func buttonReleased()
   {
-    if (isAxis)
-    {
-      MainiOS.gamepadMoveEvent(onPad: Int32(self.m_port), axis: Int32(controllerButton), value: 0)
-    }
-    else
-    {
-      MainiOS.gamepadEvent(onPad: Int32(self.m_port), button: Int32(controllerButton), action: 0)
+    DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        if (self.isAxis)
+        {
+            MainiOS.gamepadMoveEvent(onPad: Int32(self.m_port), axis: Int32(self.controllerButton), value: 0)
+        }
+        else
+        {
+            MainiOS.gamepadEvent(onPad: Int32(self.m_port), button: Int32(self.controllerButton), action: 0)
+        }
     }
   }
   

@@ -155,22 +155,34 @@ static bool MsgAlert(const char* caption, const char* text, bool yes_no, Common:
           handler:^(UIAlertAction* action) {
             yes_pressed = false;
 
-            [condition signal];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [condition signal];
+            });
         }]];
 
         [alert addAction:[UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
           handler:^(UIAlertAction * action) {
             yes_pressed = true;
 
-            [condition signal];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [condition signal];
+            });
         }]];
       }
       else
       {
         [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
           handler:^(UIAlertAction* action) {
-            [condition signal];
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [condition signal];
+            });
         }]];
+          [alert addAction:[UIAlertAction actionWithTitle:@"CANCEL" style:UIAlertActionStyleCancel
+            handler:^(UIAlertAction* action) {
+              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                  [condition signal];
+              });
+          }]];
       }
 
       [s_view_controller presentViewController:alert animated:YES completion:nil];
@@ -284,7 +296,7 @@ void UpdateWiiPointer()
 + (NSString*)getUserFolder
 {
 #ifndef IPHONEOS_JAILBROKEN
-  NSString* user_directory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+  NSString* user_directory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 #else
   NSString* user_directory = @"/private/var/mobile/Documents/DolphiniOS";
 #endif

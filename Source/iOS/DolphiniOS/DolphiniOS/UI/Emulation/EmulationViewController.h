@@ -29,7 +29,7 @@ typedef NS_ENUM(NSUInteger, DOLTopBarPullDownMode) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EmulationViewController : UIViewController <NKitWarningNoticeDelegate>
+@interface EmulationViewController : GCEventViewController <NKitWarningNoticeDelegate>
 {
   @public std::unique_ptr<BootParameters> m_boot_parameters;
   @public std::vector<std::pair<int, TCView*>> m_controllers;

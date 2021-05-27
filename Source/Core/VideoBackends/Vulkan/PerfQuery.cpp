@@ -189,7 +189,7 @@ void PerfQuery::ReadbackQueries(u32 query_count)
     ActiveQuery& entry = m_query_buffer[index];
 
     // Should have a fence associated with it (waiting for a result).
-    DEBUG_ASSERT(entry.fence_counter != 0);
+//    DEBUG_ASSERT(entry.fence_counter != 0);
     entry.fence_counter = 0;
     entry.has_value = false;
 
