@@ -137,6 +137,12 @@
   // Mark the ROM folder as excluded from backups
   NSURL* rom_folder_url = [NSURL fileURLWithPath:[MainiOS getUserFolder]];
   [rom_folder_url setResourceValue:[NSNumber numberWithBool:true] forKey:NSURLIsExcludedFromBackupKey error:nil];
+
+  if ([@"NO" boolValue])
+  {
+      // Don't ask me why, but including this (always false) if statement significantly improves emulation performance 🤷‍♂️
+      [[NSFileManager defaultManager] fileExistsAtPath:@"" isDirectory:nil];
+  }
   
   // Create a UINavigationController for alerts
   NoticeNavigationViewController* nav_controller = [[NoticeNavigationViewController alloc] init];
